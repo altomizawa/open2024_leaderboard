@@ -11,38 +11,24 @@ import results from './database/results.json'
 function App() {
   const [filteredLeaderboard, setFilteredLeaderboard] = useState(results.filter(item => item.category === 'RX'))
   const [category, setCategory] = useState('RX')
-  const [filteredResults, setFilteredResults] = useState([])
+  const [filteredResults, setFilteredResults] = useState([]);
 
-  useEffect( () => {
-    console.log('useeffect')
-    CreateAthleteResult()
-  }),[filteredResults]
 
   const handleCategoryChange = () => {
     if (category === 'RX') {
+      setFilteredLeaderboard(results.filter(item => item.category === 'scaled'))
       setCategory('scaled')
-      console.log(`current category: scaled, previous: ${category}`)
-    } else {setCategory('RX')}
-    const filteredResults = results.filter(item => item.category === category);
-    setFilteredLeaderboard(filteredResults)
+    } else {
+      setFilteredLeaderboard(results.filter(item => item.category === 'RX'))
+      setCategory('RX')
+    }
   }
-
-  // const filterLeaderboard = (filterType) => {
-  //   //IF FILTER TYPE IS BY NAME
-  //   if (filterType === 'name') {
-  //     console.log(filteredLeaderboard)
-  //     const nameFilter = filteredLeaderboard.sort((a, b) => a.name.localeCompare(b.name)); // Sort by name alphabetically
-  //     setFilteredLeaderboard(nameFilter)
-  //   }
-  // }
 
   function CreateAthleteResult(){
     return (
       filteredLeaderboard.map((athlete) => <LeaderboardItem key={athlete.name} athlete={athlete} />)
     )
   }
-    
-
   
   return (
     <>
