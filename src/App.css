@@ -21,6 +21,7 @@
   cursor: pointer;
   text-decoration: underline;
   padding-inline: 1rem;
+  /* width: 20%; */
 }
 
 @media (max-width: 680px) {
