@@ -1,12 +1,11 @@
-.leaderboard__item{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid grey;
-    padding-inline: 2rem; 
-  }
-  
-  .leaderboard__item p{
-    font-size: 1rem;
-    width: 20%;
+.leaderboard__item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+  padding-inline: 1rem;
+}
 
-  }
+.leaderboard__item p {
+  font-size: 1rem;
+  width: 20%;
+}

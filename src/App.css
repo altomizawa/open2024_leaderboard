@@ -3,13 +3,16 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .leaderboard__header {
   display: flex;
   justify-content: space-between;
   border: 1px solid grey;
-  padding-inline: 1rem;
 }
 
 .leaderboard__header h2 {
@@ -17,6 +20,7 @@
   width: 20%;
   cursor: pointer;
   text-decoration: underline;
+  padding-inline: 1rem;
 }
 
 @media (max-width: 680px) {
