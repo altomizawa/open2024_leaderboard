@@ -1,0 +1,425 @@
+[
+    {
+        "name": "Felipão",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":641.0,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Alice Goss",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":642,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Carolina Ferraz",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime": 690,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Sidartha Martins",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":696,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Paulo rocha",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":704,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Cleyverton Garcia",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":717,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Tatiana Freitas Fioravante",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":734,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Xandoca",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":758,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Gabriel Amaral",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":759,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Juliano DalBo",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":811,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Germano Holanda",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":837,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Kássia Martins",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":841,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Victor Alf",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":850,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Diego Gomes",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 153,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Guilherme Rasi",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 144,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Geraldo Mesquita",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":540,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Mayara Dathayde",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":599,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Mariana Godoy",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime": 667,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Flávia Andrade",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":686,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Adriana Gomes",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":698,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Magnólia Malagó",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":701,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Arthur",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":723,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Pâmella Sada",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":757,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Iara Menezes",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":758,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Alexandre Rebouças",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":761,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Paulinho",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":766,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Juliana Jácomo",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":786,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Priscila Carrano",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":810,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Ju Noronha",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":813,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Carolina Abraão",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":817,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Mariana Cofferri",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":841,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Priscilla Santiago",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":842,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Fernando Khodr",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime": 853,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Alessandra Henriques",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":880,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Ana Claudia Cardozo",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":885,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "David Lobato",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":889,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Fabiana Schwarz",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 180,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Clara Vieira",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 175,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Pedro Henrique",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 171,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Marcelly Borba",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 171.1,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Letícia Neri",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 171.2,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Alexandre Viana",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 162,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Walflan",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 160,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Pedro B S Filho",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 159,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Carolina Cardoso",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 159,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Breno Neri",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 139,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Matheus Camelo",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 135,
+        "secondWodReps": 0,
+        "thirdWodReps": 0
+    }
+]
