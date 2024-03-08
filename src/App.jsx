@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import sortIcon from './assets/filter_list_FILL0_wght400_GRAD0_opsz24.svg'
+import korLogo from './assets/kor-logo.svg'
+import filterIcon from './assets/filter_list_FILL0_wght400_GRAD0_opsz24.svg'
+import sortIcon from './assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
 import './App.css'
 
 import LeaderboardItem from './components/LeaderboardItem/LeaderboardItem'
@@ -53,13 +53,14 @@ function App() {
   return (
     <>
       <div>
+        <img src={korLogo} className='logo'></img>
         <h1>Open 2024 LEADERBOARD</h1>
         <div className='leaderboard__header'>
-          <h2 style={{textAlign: 'left'}} onClick={handleNameSorting}>Nome<img src={sortIcon}/></h2>
-          <h2 onClick={handleCategoryChange}>Categoria <img src={sortIcon}/></h2>
-          <h2 onClick={handleFirstWodSorting}>24.1<img src={sortIcon}/></h2>
-          <h2>24.2<img src={sortIcon}/></h2>
-          <h2>24.3<img src={sortIcon}/></h2>
+          <h2 style={{textAlign: 'left'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
+          <h2 onClick={handleCategoryChange}><img src={filterIcon}/>Categoria</h2>
+          <h2 onClick={handleFirstWodSorting}><img src={sortIcon}/>24.1</h2>
+          <h2><img src={sortIcon}/>24.2</h2>
+          <h2><img src={sortIcon}/>24.3</h2>
         </div>
         <CreateAthleteResult />
       </div>

@@ -30,6 +30,10 @@
   width: 20px;
 }
 
+.logo {
+  width: 20%;
+}
+
 @media (max-width: 680px) {
   .leaderboard__header > h2 {
     font-size: 1rem;
