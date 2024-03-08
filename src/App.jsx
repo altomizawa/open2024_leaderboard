@@ -10,10 +10,10 @@ import LeaderboardItem from './components/LeaderboardItem/LeaderboardItem'
 import results from './database/results.json'
 
 function App() {
-  const [filteredLeaderboard, setFilteredLeaderboard] = useState(results.filter(item => item.category === 'RX'))
-  const [category, setCategory] = useState('RX')
-  const [ascendingNameOrder, setAscendingNameOrder] = useState(true)
-  // const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredLeaderboard, setFilteredLeaderboard] = useState(results.filter(item => item.category === 'RX'));
+  const [category, setCategory] = useState('RX');
+  const [ascendingNameOrder, setAscendingNameOrder] = useState(true);
+  const [ascendingWodOne, setAscendingWodOne] = useState(true);
 
 // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
@@ -35,11 +35,12 @@ function App() {
 
 // HANDLE FIRST WOD SORTING
   const handleFirstWodSorting = () => {
-    const firstWodResults = filteredLeaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime)
+    const wodFilter = filteredLeaderboard.filter(item => item.category === category);//filter by category first
+    const firstWodResults = ascendingWodOne ? wodFilter.sort((a,b) => a.firstWodTime - b.firstWodTime) : wodFilter.sort((b,a) => a.firstWodTime - b.firstWodTime)
+    setAscendingWodOne(prevState => !prevState)
     console.log(firstWodResults)
     setFilteredLeaderboard(firstWodResults)
   }
-
 
 // CREATE ATHLETE
   function CreateAthleteResult(){
