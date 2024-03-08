@@ -9,6 +9,11 @@
   font-style: normal;
 }
 
+.leaderboard__container {
+  width: 90%;
+  overflow: scroll;
+}
+
 .leaderboard__header {
   display: flex;
   justify-content: space-between;

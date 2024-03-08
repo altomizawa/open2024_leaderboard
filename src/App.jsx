@@ -55,6 +55,7 @@ function App() {
       <div>
         <img src={korLogo} className='logo'></img>
         <h1>Open 2024 LEADERBOARD</h1>
+        
         <div className='leaderboard__header'>
           <h2 style={{textAlign: 'left'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
           <h2 onClick={handleCategoryChange}><img src={filterIcon}/>Categoria</h2>
@@ -63,6 +64,7 @@ function App() {
           <h2><img src={sortIcon}/>24.3</h2>
         </div>
         <CreateAthleteResult />
+
       </div>
     </>
   )
