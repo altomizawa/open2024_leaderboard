@@ -5,7 +5,7 @@
         "division": "male",
         "firstWodTime":641.0,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 742,
         "thirdWodReps": 0
     },
     {
@@ -14,7 +14,7 @@
         "division": "female",
         "firstWodTime":642,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 401,
         "thirdWodReps": 0
     },
     {
@@ -23,7 +23,7 @@
         "division": "female",
         "firstWodTime": 690,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 607,
         "thirdWodReps": 0
     },
     {
@@ -32,7 +32,7 @@
         "division": "male",
         "firstWodTime":696,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 657,
         "thirdWodReps": 0
     },
     {
@@ -41,7 +41,7 @@
         "division": "male",
         "firstWodTime":704,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 693,
         "thirdWodReps": 0
     },
     {
@@ -50,7 +50,7 @@
         "division": "male",
         "firstWodTime":717,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 500,
         "thirdWodReps": 0
     },
     {
@@ -59,7 +59,7 @@
         "division": "female",
         "firstWodTime":734,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 637,
         "thirdWodReps": 0
     },
     {
@@ -68,7 +68,7 @@
         "division": "male",
         "firstWodTime":758,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 647,
         "thirdWodReps": 0
     },
     {
@@ -86,7 +86,7 @@
         "division": "male",
         "firstWodTime":811,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 666,
         "thirdWodReps": 0
     },
     {
@@ -95,7 +95,7 @@
         "division": "male",
         "firstWodTime":837,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 373,
         "thirdWodReps": 0
     },
     {
@@ -104,7 +104,7 @@
         "division": "female",
         "firstWodTime":841,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 547,
         "thirdWodReps": 0
     },
     {
@@ -113,7 +113,7 @@
         "division": "male",
         "firstWodTime":850,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 630,
         "thirdWodReps": 0
     },
     {
@@ -122,7 +122,7 @@
         "division": "male",
         "firstWodTime":900,
         "firstWodReps": 153,
-        "secondWodReps": 0,
+        "secondWodReps": 153,
         "thirdWodReps": 0
     },
     {
@@ -135,12 +135,21 @@
         "thirdWodReps": 0
     },
     {
+        "name": "Al Tomizawa",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 487,
+        "thirdWodReps": 0
+    },
+    {
         "name": "Geraldo Mesquita",
         "category": "scaled",
         "division": "male",
         "firstWodTime":540,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 480,
         "thirdWodReps": 0
     },
     {
@@ -149,7 +158,7 @@
         "division": "female",
         "firstWodTime":599,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 456,
         "thirdWodReps": 0
     },
     {
@@ -158,7 +167,7 @@
         "division": "female",
         "firstWodTime": 667,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 743,
         "thirdWodReps": 0
     },
     {
@@ -167,7 +176,7 @@
         "division": "female",
         "firstWodTime":686,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 630,
         "thirdWodReps": 0
     },
     {
@@ -176,7 +185,7 @@
         "division": "female",
         "firstWodTime":698,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 720,
         "thirdWodReps": 0
     },
     {
@@ -194,7 +203,7 @@
         "division": "male",
         "firstWodTime":723,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 521,
         "thirdWodReps": 0
     },
     {
@@ -203,7 +212,7 @@
         "division": "female",
         "firstWodTime":757,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 551,
         "thirdWodReps": 0
     },
     {
@@ -212,7 +221,7 @@
         "division": "male",
         "firstWodTime":758,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 548,
         "thirdWodReps": 0
     },
     {
@@ -221,7 +230,7 @@
         "division": "male",
         "firstWodTime":761,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 490,
         "thirdWodReps": 0
     },
     {
@@ -230,7 +239,7 @@
         "division": "male",
         "firstWodTime":766,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 552,
         "thirdWodReps": 0
     },
     {
@@ -248,7 +257,7 @@
         "division": "female",
         "firstWodTime":810,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 662,
         "thirdWodReps": 0
     },
     {
@@ -275,7 +284,7 @@
         "division": "female",
         "firstWodTime":841,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 633,
         "thirdWodReps": 0
     },
     {
@@ -293,7 +302,7 @@
         "division": "male",
         "firstWodTime": 853,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 647,
         "thirdWodReps": 0
     },
     {
@@ -302,7 +311,7 @@
         "division": "female",
         "firstWodTime":880,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 645,
         "thirdWodReps": 0
     },
     {
@@ -311,7 +320,7 @@
         "division": "female",
         "firstWodTime":885,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 550,
         "thirdWodReps": 0
     },
     {
@@ -320,7 +329,7 @@
         "division": "male",
         "firstWodTime":889,
         "firstWodReps": 180,
-        "secondWodReps": 0,
+        "secondWodReps": 303,
         "thirdWodReps": 0
     },
     {
@@ -338,7 +347,7 @@
         "division": "female",
         "firstWodTime":900,
         "firstWodReps": 175,
-        "secondWodReps": 0,
+        "secondWodReps": 509,
         "thirdWodReps": 0
     },
     {
@@ -347,7 +356,7 @@
         "division": "male",
         "firstWodTime":900,
         "firstWodReps": 171,
-        "secondWodReps": 0,
+        "secondWodReps": 620,
         "thirdWodReps": 0
     },
     {
@@ -365,7 +374,7 @@
         "division": "female",
         "firstWodTime":900,
         "firstWodReps": 171.2,
-        "secondWodReps": 0,
+        "secondWodReps": 555,
         "thirdWodReps": 0
     },
     {
@@ -374,7 +383,7 @@
         "division": "male",
         "firstWodTime":900,
         "firstWodReps": 162,
-        "secondWodReps": 0,
+        "secondWodReps": 580,
         "thirdWodReps": 0
     },
     {
@@ -383,7 +392,7 @@
         "division": "male",
         "firstWodTime":900,
         "firstWodReps": 160,
-        "secondWodReps": 0,
+        "secondWodReps": 758,
         "thirdWodReps": 0
     },
     {
@@ -410,7 +419,7 @@
         "division": "male",
         "firstWodTime":900,
         "firstWodReps": 139,
-        "secondWodReps": 0,
+        "secondWodReps": 486,
         "thirdWodReps": 0
     },
     {

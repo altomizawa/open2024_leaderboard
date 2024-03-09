@@ -6,7 +6,9 @@ export default function LeaderboardItem(props) {
         firstWodReps,
         secondWodReps:secondWodResult,
         thirdWodReps: thirdWodResult,
-        ranking} = props.athlete;
+        rankingWodOne,
+        rankingWodTwo,
+        rankingTotal} = props.athlete;
 
     function formatTime(seconds) {
         if(seconds === 900){
@@ -20,7 +22,7 @@ export default function LeaderboardItem(props) {
     return (
         <>
         <div className='leaderboard__item'>
-          <p style={{textAlign: 'left'}}>{name} <span>({ranking})</span></p>
+          <p style={{textAlign: 'left'}}>{name} <span>({rankingTotal})</span></p>
           <p>{category}</p>
           <p>{formatTime(firstWodResult)}</p>
           <p>{secondWodResult}</p>
