@@ -198,7 +198,7 @@
         "thirdWodReps": 0
     },
     {
-        "name": "Arthur",
+        "name": "Arthur Antonoff",
         "category": "scaled",
         "division": "male",
         "firstWodTime":723,
@@ -315,7 +315,7 @@
         "thirdWodReps": 0
     },
     {
-        "name": "Ana Claudia Cardozo",
+        "name": "Ana Cláudia Cardozo",
         "category": "scaled",
         "division": "female",
         "firstWodTime":885,
@@ -429,6 +429,150 @@
         "firstWodTime":900,
         "firstWodReps": 135,
         "secondWodReps": 0,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Amanda Suda",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 505,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Amanda Vasconcelos",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 515,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Cláudia Azambuja",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 630,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Cláudia Borges",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 450,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Elisa Lourenço",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 580,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Frederico Moreira",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 622,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Gustavo Oliveira",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 570,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Jonathas Henrique",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 570,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Kelly Fonseca",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 570,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Regiane Santos",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 710,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Roberta Salmeron",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 710,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Rodrigo Sabino",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 397,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Rodrigo Leitão",
+        "category": "RX",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 744,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Suellen Vivaldi",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 572,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Ulysses Neponucemo Guimarães",
+        "category": "scaled",
+        "division": "male",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 570,
+        "thirdWodReps": 0
+    },
+    {
+        "name": "Vanessa Malheiros",
+        "category": "scaled",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 0,
+        "secondWodReps": 650,
         "thirdWodReps": 0
     }
 ]
