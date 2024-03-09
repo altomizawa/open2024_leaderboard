@@ -24,8 +24,8 @@ export default function LeaderboardItem(props) {
         <div className='leaderboard__item'>
           <p style={{textAlign: 'left'}}>{name} <span>({rankingTotal})</span></p>
           <p>{category}</p>
-          <p>{formatTime(firstWodResult)}</p>
-          <p>{secondWodResult}</p>
+          <p>{formatTime(firstWodResult)} <span>({rankingWodOne})</span></p>
+          <p>{secondWodResult} <span>({rankingWodTwo})</span></p>
           <p>{thirdWodResult}</p>
         </div>
         </>
