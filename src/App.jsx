@@ -55,12 +55,6 @@ function App() {
   let rxLeaderboard = useRef(createLeaderboard('RX')).current;
   let scaledLeaderboard = useRef(createLeaderboard('scaled')).current;
 
- //RESET LEADERBOARD
- const resetLeaderboard = (leaderboard) => {
-  const orderedLeaderboard = leaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
-  return orderedLeaderboard
- }
-
   // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
     if (category === 'RX') {
