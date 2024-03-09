@@ -1,5 +1,6 @@
 .leaderboard__item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   border: 1px solid grey;
   padding-inline: 1rem;
@@ -7,9 +8,16 @@
 
 .leaderboard__item p {
   font-size: 1rem;
-  width: 20%;
+  text-align: center;
+  width: 100%;
 }
 
 .leaderboard__item span {
   color: grey;
+}
+
+@media (max-width: 680px) {
+  .leaderboard__item {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  }
 }
