@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import korLogo from './assets/kor-logo.svg'
 import filterIcon from './assets/filter_list_FILL0_wght400_GRAD0_opsz24.svg'
@@ -15,34 +15,46 @@ function App() {
   const [ascendingNameOrder, setAscendingNameOrder] = useState(true);
   const [ascendingWodOne, setAscendingWodOne] = useState(true);
 
-// HANDLE CATEGORY CHANGE
+
+  
+  // CREATE LEADERBOARD
+  const createLeaderboard = (category) => {
+    const leaderboard = results.filter(item => item.category === category); //create array based for RX or scaled
+    const orderedLeaderboard = leaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime) //sort array based on FirstWodResult
+    orderedLeaderboard.map((item) => item.ranking = orderedLeaderboard.indexOf(item)+1) //add ranking to each object in array
+    return orderedLeaderboard //return sorted array
+  }
+  
+  //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED)
+  let rxLeaderboard = useRef(createLeaderboard('RX')).current;
+  let scaledLeaderboard = useRef(createLeaderboard('scaled')).current;
+
+  // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
     if (category === 'RX') {
-      setFilteredLeaderboard(results.filter(item => item.category === 'scaled'))
+      setFilteredLeaderboard(scaledLeaderboard)
       setCategory('scaled')
     } else {
-      setFilteredLeaderboard(results.filter(item => item.category === 'RX'))
+      setFilteredLeaderboard(rxLeaderboard)
       setCategory('RX')
     }
   }
-// HANDLE NAME SORTING
+  // HANDLE NAME SORTING
   const handleNameSorting = () => {
-      const nameFilter = filteredLeaderboard.filter(item => item.category === category);//filter by category first
+      const nameFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard
       ascendingNameOrder ? nameFilter.sort((a, b) => a.name.localeCompare(b.name)) : nameFilter.sort((b, a) => a.name.localeCompare(b.name)); // Sort by name alphabetically
       setAscendingNameOrder(prevState => !prevState)
-      setFilteredLeaderboard(nameFilter)//render leaderboard
   }
 
-// HANDLE FIRST WOD SORTING
+  // HANDLE FIRST WOD SORTING
   const handleFirstWodSorting = () => {
-    const wodFilter = filteredLeaderboard.filter(item => item.category === category);//filter by category first
+    const wodFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard
     const firstWodResults = ascendingWodOne ? wodFilter.sort((a,b) => a.firstWodTime - b.firstWodTime) : wodFilter.sort((b,a) => a.firstWodTime - b.firstWodTime)
-    setAscendingWodOne(prevState => !prevState)
-    console.log(firstWodResults)
     setFilteredLeaderboard(firstWodResults)
+    setAscendingWodOne(prevState => !prevState)
   }
 
-// CREATE ATHLETE
+  // CREATE ATHLETE
   function CreateAthleteResult(){
     return (
       filteredLeaderboard.map((athlete) => <LeaderboardItem key={athlete.name} athlete={athlete} />)
