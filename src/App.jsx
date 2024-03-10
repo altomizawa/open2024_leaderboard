@@ -21,8 +21,6 @@ function App() {
   // CREATE LEADERBOARD
   const createLeaderboard = (category) => {
     const leaderboard = results.filter(item => item.category === category); //create array based for RX or scaled
-    // const orderedLeaderboard = leaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime) //sort array based on FirstWodResult
-    // orderedLeaderboard.map((item) => item.ranking = orderedLeaderboard.indexOf(item)+1) //add ranking to each object in array
     const leaderboardAfterWodOne = addRankingFirstWod(leaderboard)
     const leaderboardAfterWodTwo = addRankingSecondWod(leaderboardAfterWodOne)
     const finalLeaderboard = addTotalRanking(leaderboardAfterWodTwo)
