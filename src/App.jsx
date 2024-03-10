@@ -23,14 +23,12 @@ function App() {
   // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
     if (category === 'RX') {
-      const orderedLeaderboard = scaledLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
-      setFilteredLeaderboard(orderedLeaderboard)
+      handleTotalScoreSorting(category);
       setCategory('scaled')
       setAscendingWodOne(true);
       setAscendingWodTwo(true);
     } else {
-      const orderedLeaderboard = rxLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
-      setFilteredLeaderboard(orderedLeaderboard)
+      handleTotalScoreSorting(category);
       setCategory('RX')
       setAscendingWodOne(true);
       setAscendingWodTwo(true);
@@ -64,6 +62,12 @@ function App() {
     setAscendingWodOne(true)
   }
 
+  // HANDLE TOTAL SCORE SORTING
+  const handleTotalScoreSorting = (category) => {
+    const orderedLeaderboard = category==='RX' ? rxLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal) : scaledLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
+    setFilteredLeaderboard(orderedLeaderboard)
+  }
+
   // // RENDER FIRST LEADERBOARD
   useEffect(()=>{
     setFilteredLeaderboard(category==='RX' ? rxLeaderboard : scaledLeaderboard)
@@ -80,7 +84,7 @@ function App() {
     <>
       <div>
         <img src={korLogo} className={styles.logo}></img>
-        <h1>Open 2024 LEADERBOARD</h1>
+        <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
         
         <div className={styles.leaderboard__header}>
           <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
