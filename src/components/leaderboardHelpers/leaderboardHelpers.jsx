@@ -30,4 +30,4 @@ import results from '../../database/results.json'
     return orderedLeaderboard
   }
 
-  export {createLeaderboard, addRankingFirstWod, addRankingSecondWod, addTotalRanking}
+  export {createLeaderboard}
