@@ -54,7 +54,7 @@ function App() {
   //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED)
   let rxLeaderboard = useRef(createLeaderboard('RX')).current;
   let scaledLeaderboard = useRef(createLeaderboard('scaled')).current;
-console.log(rxLeaderboard)
+
   // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
     if (category === 'RX') {
