@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-
+import styles from '../src/App.module.css'
 import korLogo from './assets/kor-logo.svg'
 import filterIcon from './assets/filter_list_FILL0_wght400_GRAD0_opsz24.svg'
 import sortIcon from './assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
@@ -106,15 +106,15 @@ console.log(rxLeaderboard)
   return (
     <>
       <div>
-        <img src={korLogo} className='logo'></img>
+        <img src={korLogo} className={styles.logo}></img>
         <h1>Open 2024 LEADERBOARD</h1>
         
-        <div className='leaderboard__header'>
-          <h2 style={{textAlign: 'left'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
-          <h2 onClick={handleCategoryChange}><img src={filterIcon}/>Categoria</h2>
-          <h2 onClick={handleFirstWodSorting}><img src={sortIcon}/>24.1</h2>
-          <h2 onClick={handleSecondWodSorting}><img src={sortIcon}/>24.2</h2>
-          <h2><img src={sortIcon}/>24.3</h2>
+        <div className={styles.leaderboard__header}>
+          <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
+          <h2 onClick={handleCategoryChange} style={{cursor: "pointer", userSelect: 'none'}}><img src={filterIcon}/>Categoria</h2>
+          <h2 onClick={handleFirstWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.1</h2>
+          <h2 onClick={handleSecondWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.2</h2>
+          <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
         </div>
         <CreateAthleteResult />
 

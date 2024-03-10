@@ -1,0 +1,39 @@
+.leaderboard__container {
+  width: 90%;
+  overflow: scroll;
+}
+
+.leaderboard__header {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
+  border: 1px solid grey;
+  padding-inline: 1rem;
+}
+
+.leaderboard__header h2 {
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.leaderboard__header h2 img {
+  width: 20px;
+}
+
+.logo {
+  width: 20%;
+}
+
+@media (max-width: 680px) {
+  .leaderboard__header > h2 {
+    font-size: 1rem;
+  }
+
+  div > h1 {
+    font-size: 1.5rem;
+  }
+
+  .leaderboard__header {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  }
+}
