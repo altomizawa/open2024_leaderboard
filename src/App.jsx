@@ -26,10 +26,14 @@ function App() {
       const orderedLeaderboard = scaledLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
       setFilteredLeaderboard(orderedLeaderboard)
       setCategory('scaled')
+      setAscendingWodOne(true);
+      setAscendingWodTwo(true);
     } else {
       const orderedLeaderboard = rxLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
       setFilteredLeaderboard(orderedLeaderboard)
       setCategory('RX')
+      setAscendingWodOne(true);
+      setAscendingWodTwo(true);
     }
   }
 
@@ -38,22 +42,26 @@ function App() {
       const nameFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard
       ascendingNameOrder ? nameFilter.sort((a, b) => a.name.localeCompare(b.name)) : nameFilter.sort((b, a) => a.name.localeCompare(b.name)); // Sort by name alphabetically
       setAscendingNameOrder(prevState => !prevState)
+      setAscendingWodOne(true);
+      setAscendingWodTwo(true);
   }
 
   // HANDLE FIRST WOD SORTING
   const handleFirstWodSorting = () => {
-    const wodFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard
-    const firstWodResults = ascendingWodOne ? wodFilter.sort((a,b) => a.rankingWodOne - b.rankingWodOne) : wodFilter.sort((b,a) => a.rankingWodOne - b.rankingWodOne)
-    setFilteredLeaderboard(firstWodResults)
-    setAscendingWodOne(prevState => !prevState)
+    const wodFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard;
+    const firstWodResults = ascendingWodOne ? wodFilter.sort((a,b) => a.rankingWodOne - b.rankingWodOne) : wodFilter.sort((b,a) => a.rankingWodOne - b.rankingWodOne);
+    setFilteredLeaderboard(firstWodResults);
+    setAscendingWodOne(prevState => !prevState);
+    setAscendingWodTwo(true);
   }
 
   // HANDLE SECOND WOD SORTING
   const handleSecondWodSorting = () => {
-    const wodFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard
-    const secondWodResults = ascendingWodTwo ? wodFilter.sort((a,b) => a.secondWodReps - b.secondWodReps) : wodFilter.sort((b,a) => a.secondWodReps - b.secondWodReps)
-    setFilteredLeaderboard(secondWodResults)
-    setAscendingWodTwo(prevState => !prevState)
+    const wodFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard;
+    const secondWodResults = ascendingWodTwo ? wodFilter.sort((b,a) => a.secondWodReps - b.secondWodReps) : wodFilter.sort((a,b) => a.secondWodReps - b.secondWodReps);
+    setFilteredLeaderboard(secondWodResults);
+    setAscendingWodTwo(prevState => !prevState);
+    setAscendingWodOne(true)
   }
 
   // // RENDER FIRST LEADERBOARD
