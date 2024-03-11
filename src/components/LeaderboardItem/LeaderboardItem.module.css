@@ -1,6 +1,6 @@
 .leaderboard__item {
   display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   border: 1px solid grey;
   padding-inline: 1rem;
@@ -17,6 +17,21 @@
 }
 
 @media (max-width: 680px) {
+  .leaderboard__item {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.leaderboard__position {
+  text-align: left;
+  transform: translateX(-1em);
+}
+
+@media (max-width: 690px) {
+  .leaderboard__position {
+    display: none;
+  }
+
   .leaderboard__item {
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
   }

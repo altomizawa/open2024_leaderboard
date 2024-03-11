@@ -1,6 +1,7 @@
 import styles from './LeaderboardItem.module.css'
 
 export default function LeaderboardItem(props) {
+    const position = props.index
     const {
         name:name,
         category,
@@ -24,6 +25,7 @@ export default function LeaderboardItem(props) {
     return (
         <>
         <div className={styles.leaderboard__item}>
+          <p className={styles.leaderboard__position}>{position}</p>
           <p style={{textAlign: 'left'}}>{name} <span>({rankingTotal})</span></p>
           <p>{category}</p>
           <p>{formatTime(firstWodResult)} <span>({rankingWodOne})</span></p>

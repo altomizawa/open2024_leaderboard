@@ -76,7 +76,7 @@ function App() {
   // CREATE ATHLETE
   function CreateAthleteResult(){
     return (
-      filteredLeaderboard.map((athlete) => <LeaderboardItem key={athlete.name} athlete={athlete} />)
+      filteredLeaderboard.map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index}/>)
     )
   }
 
@@ -87,6 +87,7 @@ function App() {
         <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
         
         <div className={styles.leaderboard__header}>
+          <h2 className={styles.leaderboard__position}></h2>
           <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
           <h2 onClick={handleCategoryChange} style={{cursor: "pointer", userSelect: 'none'}}><img src={filterIcon}/>Categoria</h2>
           <h2 onClick={handleFirstWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.1</h2>
