@@ -81,6 +81,8 @@ function App() {
     )
   }
 
+  const teamLeaderboard = rxLeaderboard.filter((item) => item.team)
+  console.log(teamLeaderboard)
   return (
     <>
       <div>
