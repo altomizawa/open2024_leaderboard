@@ -15,6 +15,7 @@ function App() {
   const [ascendingNameOrder, setAscendingNameOrder] = useState(true);
   const [ascendingWodOne, setAscendingWodOne] = useState(true);
   const [ascendingWodTwo, setAscendingWodTwo] = useState(true);
+  const [isTeamsSelected, setIsTeamsSelected] = useState(false)
 
   
   //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED)
@@ -96,23 +97,31 @@ function App() {
   
   return (
     <>
+      <img src={korLogo} className={styles.logo}></img>
+      <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
+      {/* <div className={styles.selectorWrapper}>
+        <button className={styles.selector} onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
+        <button className={styles.selector} onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
+      </div> */}
       <div>
-        <img src={korLogo} className={styles.logo}></img>
-        <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
-        <div className={styles.leaderboard__header}>
-          <h2 className={styles.leaderboard__position}></h2>
-          <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
-          <h2 onClick={handleCategoryChange} style={{cursor: "pointer", userSelect: 'none'}}><img src={filterIcon}/>Categoria</h2>
-          <h2 onClick={handleFirstWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.1</h2>
-          <h2 onClick={handleSecondWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.2</h2>
-          <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
-        </div>
-        <CreateAthleteResult />
-        {/* <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/>
-        {CreateTeamsResult('Coaches')}
-        {CreateTeamsResult('Missão Suados')}
-        {CreateTeamsResult('Nameless')} */}
-
+        {!isTeamsSelected && <div>
+          
+          <div className={styles.leaderboard__header}>
+            <h2 className={styles.leaderboard__position}></h2>
+            <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
+            <h2 onClick={handleCategoryChange} style={{cursor: "pointer", userSelect: 'none'}}><img src={filterIcon}/>Categoria</h2>
+            <h2 onClick={handleFirstWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.1</h2>
+            <h2 onClick={handleSecondWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.2</h2>
+            <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
+          </div>
+          <CreateAthleteResult />
+        </div>}
+        {/* {isTeamsSelected && <div>
+          <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/>
+          {CreateTeamsResult('Coaches')}
+          {CreateTeamsResult('Missão Suados')}
+          {CreateTeamsResult('Nameless')}
+        </div>} */}
       </div>
 
     </>
