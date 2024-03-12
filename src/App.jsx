@@ -21,6 +21,12 @@ function App() {
   let rxLeaderboard = useRef(createLeaderboard('RX')).current;
   let scaledLeaderboard = useRef(createLeaderboard('scaled')).current;
 
+   // CREATE TEAM LEADERBOARD
+   const rxTeamLeaderboard = rxLeaderboard.filter((item) => item.team)
+   const scaledTeamLeaderboard = scaledLeaderboard.filter((item) => item.team)
+   const teamLeaderboard = rxTeamLeaderboard.concat(scaledTeamLeaderboard)
+   console.log(teamLeaderboard)
+
   // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
     if (category === 'RX') {
@@ -80,9 +86,7 @@ function App() {
       filteredLeaderboard.map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index+1}/>)
     )
   }
-
-  const teamLeaderboard = rxLeaderboard.filter((item) => item.team)
-  console.log(teamLeaderboard)
+  
   return (
     <>
       <div>
@@ -97,7 +101,7 @@ function App() {
           <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
         </div>
         <CreateAthleteResult />
-        {/* <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/> */}
+        <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/>
 
       </div>
 
