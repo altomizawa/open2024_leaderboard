@@ -2,6 +2,7 @@
     {
         "name": "Felipão",
         "category": "RX",
+        "team": "Nameless",
         "division": "male",
         "firstWodTime":641.0,
         "firstWodReps": 180,
@@ -10,6 +11,7 @@
     },
     {
         "name": "Alice Goss",
+        "team": "Nameless",
         "category": "RX",
         "division": "female",
         "firstWodTime":642,
@@ -19,6 +21,7 @@
     },
     {
         "name": "Carolina Ferraz",
+        "team": "Coaches",
         "category": "RX",
         "division": "female",
         "firstWodTime": 690,
@@ -28,6 +31,7 @@
     },
     {
         "name": "Sidartha Martins",
+        "team": "Missão Suados",
         "category": "RX",
         "division": "male",
         "firstWodTime":696,
@@ -36,8 +40,9 @@
         "thirdWodReps": 0
     },
     {
-        "name": "Paulo rocha",
+        "name": "Paulo Rocha",
         "category": "RX",
+        "team": "Coaches",
         "division": "male",
         "firstWodTime":704,
         "firstWodReps": 180,
@@ -73,6 +78,7 @@
     },
     {
         "name": "Gabriel Amaral",
+        "team": "Nameless",
         "category": "RX",
         "division": "male",
         "firstWodTime":759,
@@ -91,6 +97,7 @@
     },
     {
         "name": "Germano Holanda",
+        "team": "Missão Suados",
         "category": "RX",
         "division": "male",
         "firstWodTime":837,
@@ -100,6 +107,7 @@
     },
     {
         "name": "Kássia Martins",
+        "team": "Missão Suados",
         "category": "RX",
         "division": "female",
         "firstWodTime":841,
@@ -118,6 +126,7 @@
     },
     {
         "name": "Diego Gomes",
+        "team": "Nameless",
         "category": "RX",
         "division": "male",
         "firstWodTime":900,
@@ -136,6 +145,7 @@
     },
     {
         "name": "Al Tomizawa",
+        "team": "Coaches",
         "category": "RX",
         "division": "male",
         "firstWodTime":830,
@@ -235,6 +245,7 @@
     },
     {
         "name": "Paulinho",
+        "team": "Coaches",
         "category": "scaled",
         "division": "male",
         "firstWodTime":766,
@@ -253,6 +264,7 @@
     },
     {
         "name": "Priscila Carrano",
+        "team": "Missão Suados",
         "category": "scaled",
         "division": "female",
         "firstWodTime":810,
