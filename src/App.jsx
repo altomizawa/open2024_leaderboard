@@ -6,6 +6,7 @@ import sortIcon from './assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
 import './App.css'
 
 import LeaderboardItem from './components/LeaderboardItem/LeaderboardItem'
+import LeaderboardTeams from './components/LeaderboardTeams/LeaderboardTeams'
 import { createLeaderboard } from './components/leaderboardHelpers/leaderboardHelpers'
 
 function App() {
@@ -85,7 +86,6 @@ function App() {
       <div>
         <img src={korLogo} className={styles.logo}></img>
         <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
-        
         <div className={styles.leaderboard__header}>
           <h2 className={styles.leaderboard__position}></h2>
           <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
@@ -95,8 +95,10 @@ function App() {
           <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
         </div>
         <CreateAthleteResult />
+        {/* <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/> */}
 
       </div>
+
     </>
   )
 }
