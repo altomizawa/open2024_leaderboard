@@ -76,7 +76,7 @@ function App() {
   // CREATE ATHLETE
   function CreateAthleteResult(){
     return (
-      filteredLeaderboard.map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index}/>)
+      filteredLeaderboard.map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index+1}/>)
     )
   }
 
