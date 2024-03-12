@@ -86,6 +86,13 @@ function App() {
       filteredLeaderboard.map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index+1}/>)
     )
   }
+
+  // CREATE TEAMS
+  function CreateTeamsResult(teamName){
+    return(
+      (teamLeaderboard.filter((athlete) => athlete.team === teamName)).map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index+1}/>)
+    )
+  }
   
   return (
     <>
@@ -101,7 +108,10 @@ function App() {
           <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
         </div>
         <CreateAthleteResult />
-        <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/>
+        {/* <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/>
+        {CreateTeamsResult('Coaches')}
+        {CreateTeamsResult('Missão Suados')}
+        {CreateTeamsResult('Nameless')} */}
 
       </div>
 
