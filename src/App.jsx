@@ -5,6 +5,7 @@ import filterIcon from './assets/filter_list_FILL0_wght400_GRAD0_opsz24.svg'
 import sortIcon from './assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
 import './App.css'
 
+import LeaderboardIndividual from './components/LeaderboardIndividual/LeaderboardIndividual' 
 import LeaderboardItem from './components/LeaderboardItem/LeaderboardItem'
 import LeaderboardTeams from './components/LeaderboardTeams/LeaderboardTeams'
 import { createLeaderboard } from './components/leaderboardHelpers/leaderboardHelpers'
@@ -26,7 +27,6 @@ function App() {
    const rxTeamLeaderboard = rxLeaderboard.filter((item) => item.team)
    const scaledTeamLeaderboard = scaledLeaderboard.filter((item) => item.team)
    const teamLeaderboard = rxTeamLeaderboard.concat(scaledTeamLeaderboard)
-   console.log(teamLeaderboard)
 
   // HANDLE CATEGORY CHANGE
   const handleCategoryChange = () => {
@@ -88,40 +88,32 @@ function App() {
     )
   }
 
-  // CREATE TEAMS
-  function CreateTeamsResult(teamName){
-    return(
-      (teamLeaderboard.filter((athlete) => athlete.team === teamName)).map((athlete, index) => <LeaderboardItem key={athlete.name} athlete={athlete} index={index+1}/>)
-    )
-  }
+
   
   return (
     <>
       <img src={korLogo} className={styles.logo}></img>
       <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
-      {/* <div className={styles.selectorWrapper}>
+      <div className={styles.selectorWrapper}>
         <button className={styles.selector} onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
         <button className={styles.selector} onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
-      </div> */}
+      </div>
       <div>
-        {!isTeamsSelected && <div>
+        {!isTeamsSelected && 
+        <LeaderboardIndividual 
+        handleNameSorting={handleNameSorting}
+        handleCategoryChange={handleCategoryChange}
+        handleFirstWodSorting={handleFirstWodSorting}
+        handleSecondWodSorting={handleSecondWodSorting}
+        CreateAthleteResult={CreateAthleteResult} />}
+        {isTeamsSelected && <div>
+          <LeaderboardTeams
+          sortIcon={sortIcon}
+          filterIcon={filterIcon}
+          teamLeaderboard={teamLeaderboard}
+          />
           
-          <div className={styles.leaderboard__header}>
-            <h2 className={styles.leaderboard__position}></h2>
-            <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}} onClick={handleNameSorting}><img src={sortIcon}/>Nome</h2>
-            <h2 onClick={handleCategoryChange} style={{cursor: "pointer", userSelect: 'none'}}><img src={filterIcon}/>Categoria</h2>
-            <h2 onClick={handleFirstWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.1</h2>
-            <h2 onClick={handleSecondWodSorting} style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.2</h2>
-            <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
-          </div>
-          <CreateAthleteResult />
         </div>}
-        {/* {isTeamsSelected && <div>
-          <LeaderboardTeams sortIcon={sortIcon} filterIcon={filterIcon}/>
-          {CreateTeamsResult('Coaches')}
-          {CreateTeamsResult('Missão Suados')}
-          {CreateTeamsResult('Nameless')}
-        </div>} */}
       </div>
 
     </>
