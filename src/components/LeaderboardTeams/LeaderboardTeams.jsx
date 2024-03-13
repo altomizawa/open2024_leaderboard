@@ -8,7 +8,7 @@ export default function LeaderboardTeams(props){
     // CREATE TEAMS
     function CreateTeamsResult(teamName){
         return(
-            finalTeamsArray.map((team, index) => <LeaderboardItemTeams key={index} team={team} /> )
+            teamsArray.map((team, index) => <LeaderboardItemTeams key={index} team={team} /> )
         )
     }
 
@@ -44,15 +44,33 @@ export default function LeaderboardTeams(props){
           points: 0, // Initialize points to 0 (can be modified)
           totalScore
         };
-      }
-      
-    const finalTeamsArray = [
-    createTeamWithScore('Coaches', teamLeaderboard),
-    createTeamWithScore('Nameless', teamLeaderboard),
-    createTeamWithScore('Missão Suados', teamLeaderboard)
-    ];
+    }
 
-    finalTeamsArray.sort((teamA, teamB) => teamA.totalScore - teamB.totalScore )
+    // CREATE TEAM WITH SCORE ARRAY
+    const createTeamWithScoreArray = () => {
+        const finalTeamsArray = [
+            createTeamWithScore('Coaches', teamLeaderboard),
+            createTeamWithScore('Nameless', teamLeaderboard),
+            createTeamWithScore('Missão Suados', teamLeaderboard)
+        ];
+        return finalTeamsArray;
+    }
+    
+    // SORT ARRAY AND CREATE RANKING FOR EACH TEAM
+    const sortAndRankTeams = (rankedArray) => {
+        console.log(rankedArray.sort((a,b) => (b.totalScore - a.totalscore) ))
+        // console.log(rankedArray)
+        // rankedArray.map((team) => team.ranking = rankedArray.indexOf(team)+1)
+        return rankedArray
+    }
+
+    // finalTeamsArray.sort((teamA, teamB) => teamA.totalScore - teamB.totalScore )
+    // const addRankingToTeams = (teamLeaderboard) => {
+    //     teamLeaderboard.map((team) => team.ranking = teamLeaderboard.indexOf(team)+1) //add ranking to each object in array
+    //     return teamLeaderboard
+    // }
+    const teamsArray = sortAndRankTeams(createTeamWithScoreArray())
+
 
     return (
         <>

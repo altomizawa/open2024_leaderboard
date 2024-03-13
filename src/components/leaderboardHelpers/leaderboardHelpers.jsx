@@ -30,4 +30,11 @@ import results from '../../database/results.json'
     return orderedLeaderboard
   }
 
-  export {createLeaderboard}
+  // ADD TOTAL RANKING FOR TEAMS
+  const addTotalRankingForTeams = (leaderboard) => {
+    const orderedTeamLeaderboard = leaderboard.sort((a, b) => (a.totalScore - b.totalScore)) //sort array based on totalScore
+    orderedTeamLeaderboard.map((team) => team.ranking = orderedTeamLeaderboard.indexOf(team)+1) //add ranking to each object in array
+    return orderedTeamLeaderboard
+  }
+
+  export {createLeaderboard, addTotalRankingForTeams}

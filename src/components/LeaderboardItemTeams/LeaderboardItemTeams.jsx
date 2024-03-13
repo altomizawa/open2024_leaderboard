@@ -1,7 +1,6 @@
 import styles from './LeaderboardItemTeams.module.css'
 
 export default function LeaderboardItemTeams(props) {
-    console.log(props.team)
     const {name:name, category, firstWodTime:firstWodResult, firstWodReps, secondWodReps:secondWodResult, thirdWodReps: thirdWodResult, team} = props.athlete;
     function formatTime(seconds) {
         if(seconds === 900 && !firstWodReps){
