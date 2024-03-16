@@ -49,7 +49,7 @@ export default function LeaderboardItemTeams(props) {
         <div className={styles.leaderboard__item} style={{columnGap: '2rem'}}>
           <p style={{textAlign: 'left'}}></p>
           <div>
-            <p onClick={handleTeamDetails}style={{textAlign: 'left', fontWeight: 'bold', textDecoration: 'underline'}}>{team} <span>({ranking})</span></p>
+            <p onClick={handleTeamDetails}style={{textAlign: 'left', fontWeight: 'bold', textDecoration: 'underline', cursor: 'pointer'}}>{team} <span>({ranking})</span></p>
             {isAthletesOpen && athletes.map((athlete) => (<p style={{textAlign: 'left'}}>{athlete.name}</p>))}
           </div>
           <p>{calculateTeamWodOneResult()} pts</p>
