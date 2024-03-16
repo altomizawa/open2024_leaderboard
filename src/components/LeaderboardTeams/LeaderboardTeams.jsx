@@ -6,7 +6,7 @@ export default function LeaderboardTeams(props){
     const {filterIcon, sortIcon,teamLeaderboard} = props;
 
     // CREATE TEAMS
-    function CreateTeamsResult(teamName){
+    function CreateTeamsResult(){
         return(
             teamsArray.map((team, index) => <LeaderboardItemTeams key={index} team={team} /> )
         )
@@ -58,9 +58,8 @@ export default function LeaderboardTeams(props){
     
     // SORT ARRAY AND CREATE RANKING FOR EACH TEAM
     const sortAndRankTeams = (rankedArray) => {
-        console.log(rankedArray.sort((a,b) => (b.totalScore - a.totalscore) ))
-        // console.log(rankedArray)
-        // rankedArray.map((team) => team.ranking = rankedArray.indexOf(team)+1)
+        rankedArray.sort((b,a) => (b.totalScore - a.totalScore) )
+        rankedArray.map((team) => team.ranking = rankedArray.indexOf(team)+1)
         return rankedArray
     }
 
@@ -70,7 +69,6 @@ export default function LeaderboardTeams(props){
     //     return teamLeaderboard
     // }
     const teamsArray = sortAndRankTeams(createTeamWithScoreArray())
-
 
     return (
         <>
@@ -82,7 +80,7 @@ export default function LeaderboardTeams(props){
             <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
             </div>
             {/* <CreateAthleteResult /> */}
-            {CreateTeamsResult('Coaches')}
+            {CreateTeamsResult(teamsArray)}
 
         </>
     )
