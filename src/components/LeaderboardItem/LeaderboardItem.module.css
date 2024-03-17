@@ -1,6 +1,6 @@
 .leaderboard__item {
   display: grid;
-  grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: space-between;
   border: 1px solid grey;
   padding-inline: 1rem;
@@ -33,6 +33,6 @@
   }
 
   .leaderboard__item {
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

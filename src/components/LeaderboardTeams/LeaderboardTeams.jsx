@@ -12,39 +12,33 @@ export default function LeaderboardTeams(props){
         )
     }
 
-    // function CreateTeamsArray(teamName){
-    //     const teamArray = teamLeaderboard.filter((athlete) => athlete.team === teamName);
-        
-    //     const newTeamName = {
-    //         team: teamName,
-    //         athletes: teamArray,
-    //         totalScore: calculateTeamScore(teamArray)
-    //     }
-    //     return newTeamName
-
-    //     function calculateTeamScore(teamAthletes) {
-    //         let totalScore = 0;
-    //         teamAthletes.forEach(athlete => {
-    //           totalScore += athlete.rankingWodOne + athlete.rankingWodTwo;
-    //         })
-    //         return totalScore;
-    //     }
+    // function createTeamWithScore(teamName, teamLeaderboard) {
+    //     const teamAthletes = teamLeaderboard.filter(athlete => athlete.team === teamName);
+    //     const totalScore = teamAthletes.reduce((score, athlete) => score + athlete.rankingWodOne + athlete.rankingWodTwo, 0);
+      
+    //     return {
+    //       team: teamName,
+    //       athletes: teamAthletes,
+    //       points: 0, // Initialize points to 0 (can be modified)
+    //       totalScore
+    //     };
     // }
 
-    // const finalTeamsArray = [
-    //     CreateTeamsArray('Coaches'), CreateTeamsArray('Nameless'), CreateTeamsArray('Missão Suados')
-    // ]
-    function createTeamWithScore(teamName, teamLeaderboard) {
-        const teamAthletes = teamLeaderboard.filter(athlete => athlete.team === teamName);
-        const totalScore = teamAthletes.reduce((score, athlete) => score + athlete.rankingWodOne + athlete.rankingWodTwo, 0);
-      
-        return {
-          team: teamName,
-          athletes: teamAthletes,
-          points: 0, // Initialize points to 0 (can be modified)
-          totalScore
-        };
-    }
+      // CREATE TEAMS
+  function createTeamWithScore(teamName, teamLeaderboard) {
+    const teamAthletes = teamLeaderboard.filter(athlete => athlete.team === teamName);
+    const totalScore = teamAthletes.reduce((score, athlete) => {
+      const wodScores = [athlete.rankingWodOne, athlete.rankingWodTwo, athlete.rankingWodThree]; // Include rankingWodThree
+      return score + wodScores.reduce((wodSum, wodScore) => wodSum + wodScore, 0);
+    }, 0);
+
+    return {
+      team: teamName,
+      athletes: teamAthletes,
+      points: 0, // Initialize points to 0 (can be modified)
+      totalScore,
+    };
+  }
 
     // CREATE TEAM WITH SCORE ARRAY
     const createTeamWithScoreArray = () => {

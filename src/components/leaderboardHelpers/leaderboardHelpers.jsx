@@ -1,11 +1,14 @@
 import results from '../../database/results.json'
+
+import { calculateThirdWod } from '../../utils/calculateThirdWod';
   
   // CREATE LEADERBOARD
   const createLeaderboard = (category) => {
     const leaderboard = results.filter(item => item.category === category); //create array based for RX or scaled
     const leaderboardAfterWodOne = addRankingFirstWod(leaderboard)
     const leaderboardAfterWodTwo = addRankingSecondWod(leaderboardAfterWodOne)
-    const finalLeaderboard = addTotalRanking(leaderboardAfterWodTwo)
+    const leaderboardAfterWodThree = addRankingThirdWod(leaderboardAfterWodTwo)
+    const finalLeaderboard = addTotalRanking(leaderboardAfterWodThree)
     return finalLeaderboard //return sorted array
   }
 
@@ -23,9 +26,15 @@ import results from '../../database/results.json'
     return orderedLeaderboard
   }
 
+  // ADD RANKING FOR THIRD WOD
+  const addRankingThirdWod = (leaderboard) => {
+    return calculateThirdWod(leaderboard)
+  }
+
+
   // ADD TOTAL RANKING
   const addTotalRanking = (leaderboard) => {
-    const orderedLeaderboard = leaderboard.sort((a,b) => (a.rankingWodOne+a.rankingWodTwo) - (b.rankingWodOne+b.rankingWodTwo)) //sort array based on ALL WODs
+    const orderedLeaderboard = leaderboard.sort((a,b) => (a.rankingWodOne + a.rankingWodTwo + a.rankingWodThree) - (b.rankingWodOne + b.rankingWodTwo + b.rankingWodThree)) //sort array based on ALL WODs
     orderedLeaderboard.map((item) => item.rankingTotal = orderedLeaderboard.indexOf(item)+1) //add total ranking to each object in array
     return orderedLeaderboard
   }

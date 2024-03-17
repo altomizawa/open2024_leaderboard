@@ -4,6 +4,7 @@ import korLogo from './assets/kor-logo.svg'
 import filterIcon from './assets/filter_list_FILL0_wght400_GRAD0_opsz24.svg'
 import sortIcon from './assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
 import './App.css'
+import { calculateThirdWod } from './utils/calculateThirdWod'
 
 import LeaderboardIndividual from './components/LeaderboardIndividual/LeaderboardIndividual' 
 import LeaderboardItem from './components/LeaderboardItem/LeaderboardItem'
@@ -16,6 +17,7 @@ function App() {
   const [ascendingNameOrder, setAscendingNameOrder] = useState(true);
   const [ascendingWodOne, setAscendingWodOne] = useState(true);
   const [ascendingWodTwo, setAscendingWodTwo] = useState(true);
+  const [ascendingWodThree, setAscendingWodThree] = useState(true);
   const [isTeamsSelected, setIsTeamsSelected] = useState(false)
 
   
@@ -70,6 +72,18 @@ function App() {
     setAscendingWodOne(true)
   }
 
+    // HANDLE THIRD WOD SORTING
+    const handleThirdWodSorting = () => {
+      const wodFilter = category === 'RX' ? rxLeaderboard : scaledLeaderboard;
+      const thirdWodResults = ascendingWodThree ? wodFilter.sort((a,b) => a.rankingWodThree - b.rankingWodThree) : wodFilter.sort((b,a) => a.rankingWodThree - b.rankingWodThree);
+      setFilteredLeaderboard(thirdWodResults);
+      console.log(filteredLeaderboard)
+      setAscendingWodThree(prevState => !prevState);
+      setAscendingWodTwo(true);
+    }
+
+
+
   // HANDLE TOTAL SCORE SORTING
   const handleTotalScoreSorting = (category) => {
     const orderedLeaderboard = category==='RX' ? rxLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal) : scaledLeaderboard.sort((a,b) => a.rankingTotal - b.rankingTotal)
@@ -105,6 +119,7 @@ function App() {
         handleCategoryChange={handleCategoryChange}
         handleFirstWodSorting={handleFirstWodSorting}
         handleSecondWodSorting={handleSecondWodSorting}
+        handleThirdWodSorting={handleThirdWodSorting}
         CreateAthleteResult={CreateAthleteResult} />}
         {isTeamsSelected && <div>
           <LeaderboardTeams

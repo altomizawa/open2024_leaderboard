@@ -146,7 +146,7 @@
         "firstWodTime":850,
         "firstWodReps": 180,
         "secondWodReps": 630,
-        "thirdWodReps": 107,
+        "thirdWodReps": 107.2,
         "thirdWodTime": 900,
         "thirdWodTieBreaker": 604
     },
@@ -158,7 +158,7 @@
         "firstWodTime":900,
         "firstWodReps": 153,
         "secondWodReps": 153,
-        "thirdWodReps": 107,
+        "thirdWodReps": 107.1,
         "thirdWodTime": 900,
         "thirdWodTieBreaker": 773
     },
@@ -181,7 +181,7 @@
         "firstWodTime":830,
         "firstWodReps": 180,
         "secondWodReps": 487,
-        "thirdWodReps": 107,
+        "thirdWodReps": 107.3,
         "thirdWodTime": 900,
         "thirdWodTieBreaker": 590
     },
