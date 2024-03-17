@@ -98,7 +98,7 @@ function App() {
         <button className={styles.selector} onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
         <button className={styles.selector} onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
       </div>
-      <div>
+      <div style={{ minWidth: '80vw'}}>
         {!isTeamsSelected && 
         <LeaderboardIndividual 
         handleNameSorting={handleNameSorting}
