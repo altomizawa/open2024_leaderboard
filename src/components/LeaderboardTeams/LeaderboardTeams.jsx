@@ -8,7 +8,7 @@ export default function LeaderboardTeams(props){
     // CREATE TEAMS
     function CreateTeamsResult(){
         return(
-            teamsArray.map((team, index) => <LeaderboardItemTeams key={index} team={team} /> )
+            teamsArray.map((team, index) => <LeaderboardItemTeams key={index} team={team} index={index} /> )
         )
     }
 
@@ -50,7 +50,7 @@ export default function LeaderboardTeams(props){
     const createTeamWithScoreArray = () => {
         const finalTeamsArray = [
             createTeamWithScore('Coaches', teamLeaderboard),
-            createTeamWithScore('Nameless', teamLeaderboard),
+            createTeamWithScore('Na Força do Wódio', teamLeaderboard),
             createTeamWithScore('Missão Suados', teamLeaderboard)
         ];
         return finalTeamsArray;
@@ -73,11 +73,12 @@ export default function LeaderboardTeams(props){
     return (
         <>
             <div className={styles.leaderboard__header}>
-            <h2 className={styles.leaderboard__position}>1</h2>
+            <h2 className={styles.leaderboard__position}></h2>
             <h2 style={{textAlign: 'left', cursor: 'pointer', userSelect: 'none'}}><img src={sortIcon}/>Equipe</h2>
             <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.1</h2>
             <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.2</h2>
             <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
+            <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>TOTAL</h2>
             </div>
             {/* <CreateAthleteResult /> */}
             {CreateTeamsResult(teamsArray)}
