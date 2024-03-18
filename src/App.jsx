@@ -21,7 +21,7 @@ function App() {
   const [ascendingWodTwo, setAscendingWodTwo] = useState(true);
   const [ascendingWodThree, setAscendingWodThree] = useState(true);
   const [ascendingTotal, setAscendingTotal] = useState(true);
-  // const [isTeamsSelected, setIsTeamsSelected] = useState(false)
+  const [isTeamsSelected, setIsTeamsSelected] = useState(false)
 
   
   //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED / TEAMS)
@@ -118,7 +118,6 @@ function App() {
   },[])
 
   useEffect(() => {
-    console.log(currentLeaderboard)
   },[rxLeaderboard,scaledLeaderboard,currentLeaderboard])
 
 
@@ -129,16 +128,10 @@ function App() {
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 } 
 
+//COMPONENT INDIVIDUAL LEADERBOARD
+const IndividualLeaderboard = () => {
   return (
-    <>
-      <div>
-        <img src={korLogo} className={styles.logo}></img>
-        <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
-        <div className={styles.selectorWrapper}>
-          <button className={styles.selector} onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
-          <button className={styles.selector} onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
-        </div>
-        <div style={{ minWidth: '80vw'}}>
+    <div style={{ minWidth: '80vw'}}>
           <div className='leaderboard__line'>
             <p className='leaderboard__index'></p>
             <p className='leaderboard__name'><img className='leaderboard__icon' src={sortIcon} onClick={sortByName}/>Nome</p>
@@ -162,6 +155,20 @@ function App() {
             ))}
           </ul>
       </div>
+  )
+}
+
+  return (
+    <>
+      <div>
+        <img src={korLogo} className={styles.logo}></img>
+        <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
+        <div className={styles.selectorWrapper}>
+          <button className={styles.selector} onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
+          <button className={styles.selector} onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
+        </div>
+        <IndividualLeaderboard />
+        
 
         {/* {!isTeamsSelected && 
         <LeaderboardIndividual leaderboard={createFinalLeaderboard(rxLeaderboard)} />}
