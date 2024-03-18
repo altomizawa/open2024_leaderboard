@@ -14,27 +14,24 @@ import { createLeaderboard } from './components/leaderboardHelpers/leaderboardHe
 
 function App() {
   const [currentLeaderboard, setCurrentLeaderboard] = useState([])
-  const [category, setCategory] = useState('RX')
+  // const [category, setCategory] = useState('RX')
 
-  // const [filteredLeaderboard, setFilteredLeaderboard] = useState([]);
   // const [category, setCategory] = useState('RX');
-  // const [ascendingNameOrder, setAscendingNameOrder] = useState(true);
-  // const [ascendingWodOne, setAscendingWodOne] = useState(true);
-  // const [ascendingWodTwo, setAscendingWodTwo] = useState(true);
-  // const [ascendingWodThree, setAscendingWodThree] = useState(true);
+  const [ascendingNameOrder, setAscendingNameOrder] = useState(true);
+  const [ascendingWodOne, setAscendingWodOne] = useState(true);
+  const [ascendingWodTwo, setAscendingWodTwo] = useState(true);
+  const [ascendingWodThree, setAscendingWodThree] = useState(true);
   // const [isTeamsSelected, setIsTeamsSelected] = useState(false)
 
   
   //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED / TEAMS)
   let rxLeaderboard = useRef(createLeaderboard('RX')).current;
   let scaledLeaderboard = useRef(createLeaderboard('scaled')).current;
+  let ascendingRxLeaderboard = createFinalLeaderboard(rxLeaderboard)
 
   const rxTeamLeaderboard = rxLeaderboard.filter((item) => item.team) // FIND TEAM MEMBERS
   const scaledTeamLeaderboard = scaledLeaderboard.filter((item) => item.team) // FIND TEAM MEMBERS
   const teamLeaderboard = rxTeamLeaderboard.concat(scaledTeamLeaderboard) // MERGE AND CREATE FINAL TEAM LEADERBOARD
-
-  console.log(teamLeaderboard)
-
 
   // // HANDLE CATEGORY CHANGE
   // const handleCategoryChange = () => {
@@ -105,17 +102,64 @@ function App() {
   }
 
   // HANDLE SORT BY 24.1
-  const sortByFirst = () => {  
-    rxLeaderboard.sort((a, b) => a.rankingWodOne - b.rankingWodOne);
-    setCurrentLeaderboard(currentLeaderboard)
-    console.log(rxLeaderboard)
-  }
+  const sortByFirst = () => {
+    if (ascendingWodOne === false) {
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime)
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingWodOne(true)
+    } else if (ascendingWodOne === true) {
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((b,a) => a.firstWodTime - b.firstWodTime)
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingWodOne(false)
+    }
+  };
+
+  // HANDLE SORT BY 24.2
+  const sortBySecond = () => {
+    if (ascendingWodTwo === false) {
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((a,b) => a.secondWodReps - b.secondWodReps)
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingWodTwo(true)
+    } else if (ascendingWodTwo === true) {
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((b,a) => a.secondWodReps - b.secondWodReps)
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingWodTwo(false)
+    }
+  };
+
+  // HANDLE SORT BY 24.3
+  const sortByThird = () => {
+    if (ascendingWodThree === false) {
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((a,b) => a.thirdWodTime - b.thirdWodTime)
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingWodThree(true)
+    } else if (ascendingWodThree === true) {
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((b,a) => a.thirdWodTime - b.thirdWodTime)
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingWodThree(false)
+    }
+  };
 
   // HANDLE SORT BY NAME
   const sortByName = () => {
-    let sortedLeaderboard = currentLeaderboard.sort((a, b) => a.name.localeCompare(b.name));
-    setCurrentLeaderboard(sortedLeaderboard);
-    console.log(currentLeaderboard)
+    if (ascendingNameOrder===false){
+      let sortedLeaderboard = [...currentLeaderboard]
+      sortedLeaderboard.sort((a, b) => a.name.localeCompare(b.name));
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingNameOrder(true)
+
+    } else if (ascendingNameOrder===true) {
+      let sortedLeaderboard = [...currentLeaderboard];
+      sortedLeaderboard.sort((b, a) => a.name.localeCompare(b.name));
+      setCurrentLeaderboard(sortedLeaderboard);
+      setAscendingNameOrder(false)
+    }
   };
   
 
@@ -125,8 +169,8 @@ function App() {
   },[])
 
   useEffect(() => {
-    console.log('updated')
-  },[rxLeaderboard,scaledLeaderboard, currentLeaderboard])
+    console.log(currentLeaderboard)
+  },[rxLeaderboard,scaledLeaderboard,currentLeaderboard])
 
 
 
@@ -150,12 +194,12 @@ function App() {
           <p className='leaderboard__name'><img className='leaderboard__icon' src={sortIcon} onClick={sortByName}/>Nome</p>
           <p className='leaderboard__text'><img className='leaderboard__icon' src={sortIcon} onClick={changeCategory}/>Categoria</p>
           <p className='leaderboard__text'><img className='leaderboard__icon' src={sortIcon} onClick={sortByFirst}/>24.1</p>
-          <p className='leaderboard__text'><img className='leaderboard__icon' src={sortIcon} />24.2</p>
-          <p className='leaderboard__text'><img className='leaderboard__icon' src={sortIcon} />24.3</p>
+          <p className='leaderboard__text'><img className='leaderboard__icon' src={sortIcon} onClick={sortBySecond}/>24.2</p>
+          <p className='leaderboard__text'><img className='leaderboard__icon' src={sortIcon} onClick={sortByThird}/>24.3</p>
           <p className='leaderboard__text'>TOTAL</p>
         </div>
         <ul className='leaderboard__ul'>
-          {createFinalLeaderboard(currentLeaderboard).map((athlete,index) => (
+          {currentLeaderboard.map((athlete,index) => (
             <li className='leaderboard__line' key={index}>
               <p className='leaderboard__index'>{index+1}</p>
               <p className='leaderboard__name'>{athlete.name}<span className='leaderboard__span'> ({athlete.rankingTotal})</span></p>
