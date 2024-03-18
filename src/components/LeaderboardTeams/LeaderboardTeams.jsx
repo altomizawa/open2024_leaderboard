@@ -3,7 +3,7 @@ import styles from '../LeaderboardTeams/LeaderboardTeams.module.css'
 import LeaderboardItemTeams from '../LeaderboardItemTeams/LeaderboardItemTeams';
 
 export default function LeaderboardTeams(props){
-    const {filterIcon, sortIcon,teamLeaderboard} = props;
+    const {sortIcon, teamLeaderboard} = props;
 
     // CREATE TEAMS
     function CreateTeamsResult(){
@@ -12,19 +12,7 @@ export default function LeaderboardTeams(props){
         )
     }
 
-    // function createTeamWithScore(teamName, teamLeaderboard) {
-    //     const teamAthletes = teamLeaderboard.filter(athlete => athlete.team === teamName);
-    //     const totalScore = teamAthletes.reduce((score, athlete) => score + athlete.rankingWodOne + athlete.rankingWodTwo, 0);
-      
-    //     return {
-    //       team: teamName,
-    //       athletes: teamAthletes,
-    //       points: 0, // Initialize points to 0 (can be modified)
-    //       totalScore
-    //     };
-    // }
-
-      // CREATE TEAMS
+    // CREATE TEAMS
   function createTeamWithScore(teamName, teamLeaderboard) {
     const teamAthletes = teamLeaderboard.filter(athlete => athlete.team === teamName);
     const totalScore = teamAthletes.reduce((score, athlete) => {
@@ -57,11 +45,6 @@ export default function LeaderboardTeams(props){
         return rankedArray
     }
 
-    // finalTeamsArray.sort((teamA, teamB) => teamA.totalScore - teamB.totalScore )
-    // const addRankingToTeams = (teamLeaderboard) => {
-    //     teamLeaderboard.map((team) => team.ranking = teamLeaderboard.indexOf(team)+1) //add ranking to each object in array
-    //     return teamLeaderboard
-    // }
     const teamsArray = sortAndRankTeams(createTeamWithScoreArray())
 
     return (
@@ -74,7 +57,6 @@ export default function LeaderboardTeams(props){
             <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>24.3</h2>
             <h2 style={{cursor: "pointer", userSelect: 'none'}}><img src={sortIcon}/>TOTAL</h2>
             </div>
-            {/* <CreateAthleteResult /> */}
             {CreateTeamsResult(teamsArray)}
 
         </>

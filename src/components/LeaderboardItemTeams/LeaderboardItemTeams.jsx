@@ -3,7 +3,7 @@ import styles from './LeaderboardItemTeams.module.css'
 
 export default function LeaderboardItemTeams(props) {
     const[isAthletesOpen, setIsAthletesOpen] = useState(false);
-    // GET
+
     const {team=team, athletes = team.athletes, ranking=ranking, totalScore } = props.team
 
     //Calculate points based on rankingWodOne+rankingWodTwo 
@@ -51,22 +51,6 @@ export default function LeaderboardItemTeams(props) {
         )
     }
 
-    // CALCULATE TEAM TOTAL
-    const calculateTeamTotal = () => {
-        return calculateTeamWodOneResult() + calculateTeamWodTwoResult()
-    }
-
-
-
-    // function formatTime(seconds) {
-    //     if(seconds === 900 && !firstWodReps){
-    //         return firstWodReps
-    //     }
-    //     const minutes = Math.floor(seconds / 60);
-    //     const remainingSeconds = seconds % 60;
-    //     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-    // }
-
     return (
         <>
         <div className={styles.leaderboard__item} style={{columnGap: '2rem'}}>
@@ -78,11 +62,7 @@ export default function LeaderboardItemTeams(props) {
           <p>{calculateTeamWodOneResult()} pts</p>
           <p>{calculateTeamWodTwoResult()} pts</p>
           <p>{calculateTeamWodThreeResult()} pts</p>
-          <p>{calculateTeamTotal()}</p>
-          {/* <p>{calculateTeamWodThreeResult()}</p> */}
-          {/* <p>{formatTime(firstWodResult)}</p> */}
-          {/* <p>{secondWodResult}</p> */}
-          {/* <p>{thirdWodResult}</p> */}
+          <p>{totalScore}</p>
         </div>
         </>
     )

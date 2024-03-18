@@ -8,9 +8,6 @@ import './App.css'
 import { calculateFirstWod } from './utils/calculateFirstWod'
 import { calculateThirdWod } from './utils/calculateThirdWod'
 import { createFinalLeaderboard } from './components/leaderboardHelpers/createFinalLeaderboard'
-
-import LeaderboardIndividual from './components/LeaderboardIndividual/LeaderboardIndividual' 
-import LeaderboardItem from './components/LeaderboardItem/LeaderboardItem'
 import LeaderboardTeams from './components/LeaderboardTeams/LeaderboardTeams'
 import { createLeaderboard } from './components/leaderboardHelpers/leaderboardHelpers'
 
@@ -167,19 +164,12 @@ const IndividualLeaderboard = () => {
           <button className={styles.selector} onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
           <button className={styles.selector} onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
         </div>
-        <IndividualLeaderboard />
-        
-
-        {/* {!isTeamsSelected && 
-        <LeaderboardIndividual leaderboard={createFinalLeaderboard(rxLeaderboard)} />}
-        {isTeamsSelected && 
-          <div>
-          <LeaderboardTeams
+        {!isTeamsSelected && <IndividualLeaderboard />}
+        {isTeamsSelected && <LeaderboardTeams
           sortIcon={sortIcon}
           filterIcon={filterIcon}
           teamLeaderboard={teamLeaderboard}
-          /> 
-        </div>} */}
+          /> }
       </div>
 
     </>
