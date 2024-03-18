@@ -13,7 +13,7 @@ export function calculateThirdWod(leaderboard) {
 
   // ADD RANKING TO ATHLETES WHO FINISHED ARRAY
   athletesWhoFinished.sort(
-    (athleteA, athleteB) => athleteA.thirdWodTime - athleteB.thirWodTime
+    (athleteA, athleteB) => athleteA.thirdWodTime - athleteB.thirdWodTime
   );
 
   // ADD RANKING TO ATHLETES WHO DID NOT FINISH ARRAY

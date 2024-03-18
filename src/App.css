@@ -36,4 +36,5 @@
 
 .leaderboard__icon {
   width: 20px;
+  cursor: pointer;
 }
