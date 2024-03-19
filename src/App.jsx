@@ -24,17 +24,18 @@ function App() {
   //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED / TEAMS)
   let rxLeaderboard = useRef(createLeaderboard('RX')).current;
   let scaledLeaderboard = useRef(createLeaderboard('scaled')).current; 
-  console.log(scaledLeaderboard, rxLeaderboard)
   let ascendingRxLeaderboard = createFinalLeaderboard(rxLeaderboard)
   let ascendingScaledLeaderboard = createFinalLeaderboard(scaledLeaderboard)
 
   const rxTeamLeaderboard = rxLeaderboard.filter((item) => item.team) // FIND TEAM MEMBERS
   const scaledTeamLeaderboard = scaledLeaderboard.filter((item) => item.team) // FIND TEAM MEMBERS
   const teamLeaderboard = rxTeamLeaderboard.concat(scaledTeamLeaderboard) // MERGE AND CREATE FINAL TEAM LEADERBOARD
+
+
   // HANDLE CATEGORY CHANGE
   const changeCategory = () => {
     if(currentLeaderboard === rxLeaderboard) {
-      return setCurrentLeaderboard(scaledLeaderboard)
+      return setCurrentLeaderboard(ascendingScaledLeaderboard)
     }
     setCurrentLeaderboard(rxLeaderboard)
   }
