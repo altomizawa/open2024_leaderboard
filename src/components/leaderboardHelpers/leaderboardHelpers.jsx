@@ -13,13 +13,6 @@ import { calculateThirdWod } from '../../utils/calculateThirdWod';
     return finalLeaderboard //return sorted array
   }
 
-  // ADD RANKING FOR FIRST WOD
-  // const addRankingFirstWod = (leaderboard) => {
-  //   const orderedLeaderboard = leaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime) //sort array based on FirstWodResult
-  //   orderedLeaderboard.map((item) => item.rankingWodOne = orderedLeaderboard.indexOf(item)+1) //add first wod ranking to each object
-  //   return orderedLeaderboard
-  // }
-
   const addRankingFirstWod = (leaderboard) => {
     return calculateFirstWod(leaderboard)
   }
