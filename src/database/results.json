@@ -82,6 +82,17 @@
         "thirdWodTieBreaker": 303
     },
     {
+        "name": "Tatiana Freitas Fioravante 2",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":734,
+        "firstWodReps": 180,
+        "secondWodReps": 637,
+        "thirdWodReps": 3,
+        "thirdWodTime":900,
+        "thirdWodTieBreaker": 303
+    },
+    {
         "name": "Xandoca",
         "category": "RX",
         "division": "male",
@@ -129,7 +140,6 @@
     },
     {
         "name": "Kássia Martins",
-        "team": "Missão Suados",
         "category": "RX",
         "division": "female",
         "firstWodTime":841,
@@ -137,6 +147,18 @@
         "secondWodReps": 547,
         "thirdWodReps": 170,
         "thirdWodTime": 874,
+        "thirdWodTieBreaker": 320
+    },
+    {
+        "name": "Kássia Martins 2",
+        "team": "Missão Suados",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":841,
+        "firstWodReps": 180,
+        "secondWodReps": 547,
+        "thirdWodReps": 2,
+        "thirdWodTime": 900,
         "thirdWodTieBreaker": 320
     },
     {
@@ -320,7 +342,6 @@
     },
     {
         "name": "Priscila Carrano",
-        "team": "Missão Suados",
         "category": "scaled",
         "division": "female",
         "firstWodTime":810,
@@ -328,6 +349,18 @@
         "secondWodReps": 662,
         "thirdWodReps": 170,
         "thirdWodTime": 822,
+        "thirdWodTieBreaker": 395
+    },
+    {
+        "name": "Priscila Carrano 2",
+        "team": "Missão Suados",
+        "category": "RX",
+        "division": "female",
+        "firstWodTime":900,
+        "firstWodReps": 1,
+        "secondWodReps": 0,
+        "thirdWodReps": 1,
+        "thirdWodTime": 900,
         "thirdWodTieBreaker": 395
     },
     {

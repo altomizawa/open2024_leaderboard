@@ -1,5 +1,6 @@
 import results from '../../database/results.json'
 
+import { calculateFirstWod } from '../../utils/calculateFirstWod';
 import { calculateThirdWod } from '../../utils/calculateThirdWod';
   
   // CREATE LEADERBOARD
@@ -13,10 +14,14 @@ import { calculateThirdWod } from '../../utils/calculateThirdWod';
   }
 
   // ADD RANKING FOR FIRST WOD
+  // const addRankingFirstWod = (leaderboard) => {
+  //   const orderedLeaderboard = leaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime) //sort array based on FirstWodResult
+  //   orderedLeaderboard.map((item) => item.rankingWodOne = orderedLeaderboard.indexOf(item)+1) //add first wod ranking to each object
+  //   return orderedLeaderboard
+  // }
+
   const addRankingFirstWod = (leaderboard) => {
-    const orderedLeaderboard = leaderboard.sort((a,b) => a.firstWodTime - b.firstWodTime) //sort array based on FirstWodResult
-    orderedLeaderboard.map((item) => item.rankingWodOne = orderedLeaderboard.indexOf(item)+1) //add first wod ranking to each object
-    return orderedLeaderboard
+    return calculateFirstWod(leaderboard)
   }
 
    // ADD RANKING FOR SECOND WOD

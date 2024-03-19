@@ -19,6 +19,7 @@ function App() {
   const [ascendingWodThree, setAscendingWodThree] = useState(true);
   const [ascendingTotal, setAscendingTotal] = useState(true);
   const [isTeamsSelected, setIsTeamsSelected] = useState(false)
+  const [category, setCategory] = useState('RX')
 
   
   //CREATE NEW ARRAY FOR EACH CATEGORY (RX / SCALED / TEAMS)
@@ -34,10 +35,12 @@ function App() {
 
   // HANDLE CATEGORY CHANGE
   const changeCategory = () => {
-    if(currentLeaderboard === rxLeaderboard) {
+    if(category === 'RX') {
+      setCategory('scaled')
       return setCurrentLeaderboard(ascendingScaledLeaderboard)
     }
-    setCurrentLeaderboard(rxLeaderboard)
+    setCategory('RX')
+    setCurrentLeaderboard(ascendingRxLeaderboard)
   }
 
   // HANDLE SORT BY 24.1
