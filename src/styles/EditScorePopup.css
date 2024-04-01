@@ -1,0 +1,38 @@
+.editScorePopup{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editScorePopup__form{
+    width: 400px;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.editScorePopup__title{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.editScorePopup__button-wrapper{
+    color: black;
+}
+
+.editScorePopup__selector{
+    position: absolute;
+    width: 45%;
+    height: 90%;
+    top: 2px;
+    left:3px;
+    background-color: grey;
+    border-radius: 8px;
+}
