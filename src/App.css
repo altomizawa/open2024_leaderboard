@@ -1,39 +1,7 @@
 #root {
-  margin: auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
-}
-.leaderboard__ul {
-  margin: 0;
-  padding: 0;
-}
-.leaderboard__line {
-  list-style: none;
-  display: grid;
-  border: 1px solid gray;
-  grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr 1fr;
-}
-.leaderboard__text {
-  text-align: center;
-}
-
-.leaderboard__index {
-  color: grey;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.leaderboard__name {
-  text-align: left;
-}
-.leaderboard__span {
-  color: darkslategray;
-  font-size: 14px;
-}
-
-.leaderboard__icon {
-  width: 20px;
-  cursor: pointer;
 }
