@@ -1,0 +1,44 @@
+
+
+.admin__line {
+  width: 90%;
+  margin-inline: auto;
+  align-items: center;
+  list-style: none;
+  display: grid;
+  border: 1px solid gray;
+  grid-template-columns: 100px 2.5fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.admin__edit-button{
+  height: 40px;
+  margin: 1rem;
+}
+
+.admin__line-header{
+  font-weight: bold;
+  color: grey;
+  padding-block: 1rem;
+}
+
+.admin__form{
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  margin-block: 2rem;
+}
+
+.admin__form-input{
+  width: 500px;
+  height: 30px;
+  border: none;
+  padding-inline: 15px;
+  font-size: 16px;
+}
+
+.admin__title{
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}

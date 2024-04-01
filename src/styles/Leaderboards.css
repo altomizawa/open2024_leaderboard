@@ -1,0 +1,7 @@
+.Leaderboard__selectorWrapper{
+  width: 90%;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  column-gap: 10px;
+}
