@@ -6,6 +6,9 @@ import EditScorePopup from "../components/EditScorePopup/EditScorePopup";
 
 export default function EditPlayerScore() {
   const [user, setUser] = useState({})
+  const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
+  const [isSecondPopupOpen, setIsSecondPopupOpen] = useState(false);
+  const [isThirdPopupOpen, setIsThirdPopupOpen] = useState(false);
 
   const navigate = useNavigate();
   const {id} = useParams();
@@ -30,6 +33,12 @@ export default function EditPlayerScore() {
       wodThreeTime: undefined,
       wodThreeResult: undefined,
     })
+  }
+
+  const closeAllPopups = () => {
+    setIsFirstPopupOpen(false);
+    setIsSecondPopupOpen(false);
+    setIsThirdPopupOpen(false);
   }
   
   const submitWodResults = (e) => {
@@ -65,30 +74,16 @@ export default function EditPlayerScore() {
       <div className='editplayerscore'>
         <h2 className='editplayerscore__title'>Editing scores for {user.name}</h2>
         <h3 className='editplayerscore__subtitle'>Pick a WOD to change the score</h3>
-        <button className='editplayerscore__wod-selector'>24.1</button>
+        <button className='editplayerscore__wod-selector' onClick={() => {setIsFirstPopupOpen(true)}}>24.1</button>
         <button className='editplayerscore__wod-selector'>24.2</button>
-        <button className='editplayerscore__wod-selector'>24.3  </button>
-        <EditScorePopup />
-        {/* <form className='editplayerscore__form' onSubmit={submitWodResults}>
-            <h3>24.1</h3>
-          <div className='editplayerscore__input-wrapper'>
-            <input type='number' value={wodResults.wodOneTime} name='wodOneTime' placeholder={user.wodOneTime} onChange={handleWodResultsInput} />
-            <input type='number' value={wodResults.wodOneResult} name='wodOneResult' placeholder={user.wodOneResult} onChange={handleWodResultsInput} />
-          </div>
-            <h3>24.2</h3>
-          <div className='editplayerscore__input-wrapper'>
-            <input type='number' value={wodResults.wodTwoResult} name='wodTwoResult' placeholder={user.wodTwoResult} onChange={handleWodResultsInput} />
-          </div>
-            <h3>24.3</h3>
-          <div className='editplayerscore__input-wrapper'>
-            <input type='number' value={wodResults.wodThreeTime} name='wodThreeTime' placeholder={user.wodThreeTime} onChange={handleWodResultsInput} />
-            <input type='number' value={wodResults.wodThreeResult} name='wodThreeResult' placeholder={user.wodThreeResult} onChange={handleWodResultsInput} />
-          </div>
-          <div className='editplayerscore__input-wrapper'>
-            <button type='button' onClick={cancelEditing} >CANCEL</button>
-            <button type='submit'>SUBMIT</button>
-          </div>
-        </form> */}
+        <button className='editplayerscore__wod-selector' onClick={() => {setIsThirdPopupOpen(true)}}>24.3  </button>
+        <button className='editplayerscore__wod-selector editplayerscore__back-button' onClick={cancelEditing}>VOLTAR</button>
+        {isFirstPopupOpen && <EditScorePopup
+          closeAllPopups={closeAllPopups} />
+        }
+        {isThirdPopupOpen && <EditScorePopup
+          closeAllPopups={closeAllPopups} />
+        }
       </div>
     </>
   )

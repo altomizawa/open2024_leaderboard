@@ -2,13 +2,15 @@ import { useState } from "react"
 
 import TimeInput from "../TimeInput/TimeInput";
 
-export default function EditScorePopup() {
+export default function EditScorePopup(props) {
   const [didAthleteFinish, setDidAthleteFinish] = useState(true)
   const [input, setInput] = useState(undefined)
 
+  const { closeAllPopups } = props;
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('form submitted')
+    console.log('form submitted');
   }
 
   const handleRepsInput = (e) => {
@@ -38,7 +40,7 @@ export default function EditScorePopup() {
           {didAthleteFinish ? 'Final time:' : 'Total Reps:'}</h3>
           {didAthleteFinish ? <TimeInput /> : <input className='editScorePopup__form-input' type='number' value={input} onChange={handleRepsInput}/>}
         <div className='editScorePopup__form-button-wrapper'>
-          <button type='button' className='editScorePopup__form-button editScorePopup__form-button_cancel'>CANCEL</button>
+          <button type='button' className='editScorePopup__form-button editScorePopup__form-button_cancel' onClick={closeAllPopups}>CANCEL</button>
           <button type='submit' className='editScorePopup__form-button'>SUBMIT</button>
 
         </div>

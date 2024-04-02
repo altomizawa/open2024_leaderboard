@@ -21,6 +21,10 @@
     margin-inline: auto;
 }
 
+.editplayerscore__back-button{
+    background-color: rgb(249,62,62);
+}
+
 .editplayerscore__form{
     width: 90%;
     margin-inline: auto;
