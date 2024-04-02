@@ -28,7 +28,7 @@ class Api {
     }
 
     getAllUsers (options) {
-        return this._makeFetchRequest(`${BASE_URL}/athletes`, 'POST', options);
+        return this._makeFetchRequest(`${BASE_URL}/athletes/filter`, 'POST', options);
     }
 
     getUserById (userId) {
