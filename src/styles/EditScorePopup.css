@@ -8,31 +8,77 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 .editScorePopup__form{
+    padding-block: 2.5rem;
     width: 400px;
     min-height: 200px;
     background-color: white;
     border-radius: 10px;
 }
 
-.editScorePopup__title{
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
 .editScorePopup__button-wrapper{
-    color: black;
+    margin-top: 16px;
 }
 
 .editScorePopup__selector{
     position: absolute;
-    width: 45%;
-    height: 90%;
-    top: 2px;
-    left:3px;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right:0;
     background-color: grey;
+}
+
+.editScorePopup__selector_false{
+    left: 0;
+}
+
+.editScorePopup__button{
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.editScorePopup__selection{
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: black;
+}
+.editScorePopup__selection_false{
+    color: lightgray
+}
+
+.editScorePopup__score-label{
+    margin-top: 16px;
+}
+
+.editScorePopup__form-input{
+    background-color: white;
+    border: 1px solid black;
+    padding-block: 0.5rem;
+    text-align: center;
+    width:50%;
     border-radius: 8px;
+    color: black;
+}
+
+.editScorePopup__form-button-wrapper{
+    width:50%;
+    margin-inline:auto;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+.editScorePopup__form-button_cancel{
+    background-color: rgb(249, 62, 62);
 }

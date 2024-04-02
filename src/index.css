@@ -5,7 +5,7 @@
 @import url(../src/styles/EditPlayerScore.css);
 @import url(../src/styles/IndividualLeaderboard.css);
 @import url(../src/styles/EditScorePopup.css);
-
+@import url(../src/styles/TimeInput.css);
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
