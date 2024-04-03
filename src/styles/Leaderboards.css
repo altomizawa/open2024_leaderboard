@@ -1,7 +1,13 @@
-.Leaderboard__selectorWrapper{
+.leaderboard{
+  margin-top: 20px;
   width: 90%;
   margin-inline: auto;
-  margin-bottom: 2rem;
+}
+
+.leaderboard__selectorWrapper{
   display: flex;
   column-gap: 10px;
+  /* border: 1px solid white; */
+  justify-content: center;
+  margin-bottom: 20px;
 }

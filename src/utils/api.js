@@ -38,6 +38,10 @@ class Api {
     changeUserScore (userId, scores) {
         return this._makeFetchRequest(`${BASE_URL}/athletes/${userId}/scores`, 'PATCH', scores)
     }
+
+    getTeams () {
+        return this._makeFetchRequest(`${BASE_URL}/athletes/getteams`, 'POST')
+    }
 }
 
 const requestApi = new Api();

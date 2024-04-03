@@ -20,9 +20,9 @@ export default function TimeInput() {
 
   return(
     <div className='timeInput'>
-      <input className='timeInput__input' type='number' maxLength={2} value={minutes} onChange={handleMinutes} />
+      <input className='timeInput__input' type='number' maxLength={2} name='minutes' value={minutes} onChange={handleMinutes} />
         <h3>:</h3>
-      <input className='timeInput__input' type='number' maxLength={2} value={seconds} onChange={handleSeconds} />
+      <input className='timeInput__input' type='number' maxLength={2} name='seconds' value={seconds} onChange={handleSeconds} />
     </div>
   )
 }

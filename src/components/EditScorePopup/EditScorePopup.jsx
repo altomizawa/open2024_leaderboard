@@ -10,12 +10,14 @@ export default function EditScorePopup(props) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('form submitted');
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData)
+    console.log(data);
   }
 
   const handleRepsInput = (e) => {
     if(e.target.value.length<4){
-      setInput(e.target.value)
+      setInput(e.target)
     }
     return
   }
@@ -38,7 +40,7 @@ export default function EditScorePopup(props) {
         </div>
         <h3 className='editScorePopup__score-label'>
           {didAthleteFinish ? 'Final time:' : 'Total Reps:'}</h3>
-          {didAthleteFinish ? <TimeInput /> : <input className='editScorePopup__form-input' type='number' value={input} onChange={handleRepsInput}/>}
+          {didAthleteFinish ? <TimeInput /> : <input name='wodOneResult' className='editScorePopup__form-input' type='number' value='55' onChange={handleRepsInput}/>}
         <div className='editScorePopup__form-button-wrapper'>
           <button type='button' className='editScorePopup__form-button editScorePopup__form-button_cancel' onClick={closeAllPopups}>CANCEL</button>
           <button type='submit' className='editScorePopup__form-button'>SUBMIT</button>

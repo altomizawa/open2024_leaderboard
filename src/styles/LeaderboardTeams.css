@@ -1,0 +1,74 @@
+.leaderboardTeams__container {
+    width: 90%;
+    overflow: scroll;
+  }
+  
+  .leaderboardTeams__header {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr;
+    border: 1px solid grey;
+    padding-inline: 1rem;
+  }
+  
+  .leaderboardTeams__header h2 {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .leaderboardTeams__header h2 img {
+    width: 20px;
+  }
+  
+  .logo {
+    margin-top: 60px;
+    width: 100px;
+  }
+  
+  
+  .leaderboardTeams__title {
+    margin-top: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .leaderboardTeams__line{
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    border: 1px solid grey;
+    padding-block: 0.5rem;
+  }
+
+  .leaderboardTeams__name{
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .leaderboardTeams__team-name{
+    text-align: left;
+    color: grey;
+    margin-block: 10px;
+  }
+
+  .leaderboardTeam_athlete-result{
+    margin-block: 10px;
+    color: gray;
+  }
+
+  .leadeboardTeam__athletes{
+    margin-top: 15px;
+  }
+
+  @media (max-width: 680px) {
+    .leaderboardTeams__header > h2 {
+      font-size: 1rem;
+    }
+  
+    /* div h1 {
+      font-size: 1rem;
+    } */
+  
+    .leaderboardTeams__header {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    }
+  }

@@ -6,6 +6,8 @@
 @import url(../src/styles/IndividualLeaderboard.css);
 @import url(../src/styles/EditScorePopup.css);
 @import url(../src/styles/TimeInput.css);
+@import url(../src//styles/LeaderboardTeams.css);
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
