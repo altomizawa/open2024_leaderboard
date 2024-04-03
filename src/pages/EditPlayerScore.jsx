@@ -9,7 +9,7 @@ export default function EditPlayerScore() {
   const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
   const [isSecondPopupOpen, setIsSecondPopupOpen] = useState(false);
   const [isThirdPopupOpen, setIsThirdPopupOpen] = useState(false);
-
+  const [wodNumber, setWodNumber] = useState(null)
   const navigate = useNavigate();
   const {id} = useParams();
 
@@ -74,15 +74,24 @@ export default function EditPlayerScore() {
       <div className='editplayerscore'>
         <h2 className='editplayerscore__title'>Editing scores for {user.name}</h2>
         <h3 className='editplayerscore__subtitle'>Pick a WOD to change the score</h3>
-        <button className='editplayerscore__wod-selector' onClick={() => {setIsFirstPopupOpen(true)}}>24.1</button>
+        <button className='editplayerscore__wod-selector' onClick={() => {
+          setIsFirstPopupOpen(true)
+          setWodNumber(1)
+          }}>24.1</button>
         <button className='editplayerscore__wod-selector'>24.2</button>
-        <button className='editplayerscore__wod-selector' onClick={() => {setIsThirdPopupOpen(true)}}>24.3  </button>
+        <button className='editplayerscore__wod-selector' onClick={() => {
+          setIsThirdPopupOpen(true)
+          setWodNumber(3)
+          }}>24.3  </button>
         <button className='editplayerscore__wod-selector editplayerscore__back-button' onClick={cancelEditing}>VOLTAR</button>
         {isFirstPopupOpen && <EditScorePopup
-          closeAllPopups={closeAllPopups} />
+          closeAllPopups={closeAllPopups}
+          wodNumber = '1' />
         }
         {isThirdPopupOpen && <EditScorePopup
-          closeAllPopups={closeAllPopups} />
+          closeAllPopups={closeAllPopups}
+          wodNumber = '3' 
+          />
         }
       </div>
     </>
