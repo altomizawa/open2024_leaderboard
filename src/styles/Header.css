@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 2em;
+    margin-inline: auto;
+}
+
+.header__logo{
+    width: 100px;
+}
+
+.header__button{
+    height:40px;
+}

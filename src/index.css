@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url(../src/styles/Header.css);
 @import url(../src/styles/Leaderboards.css);
 @import url(../src/styles/Admin.css);
 @import url(../src/styles/EditPlayerScore.css);
 @import url(../src/styles/IndividualLeaderboard.css);
 @import url(../src/styles/EditScorePopup.css);
 @import url(../src/styles/TimeInput.css);
-@import url(../src//styles/LeaderboardTeams.css);
+@import url(../src/styles/LeaderboardTeams.css);
+@import url(../src/styles/Footer.css);
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
