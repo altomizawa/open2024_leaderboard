@@ -10,7 +10,6 @@ export default function IndividualLeaderboard() {
   const [ascendingWodTwo, setAscendingWodTwo] = useState(false);
   const [ascendingWodThree, setAscendingWodThree] = useState(false);
   const [ascendingTotal, setAscendingTotal] = useState(false);
-  const [isTeamsSelected, setIsTeamsSelected] = useState(false)
   const [category, setCategory] = useState('RX')
 
       // REQUESTS FOR ALL FILTERS
