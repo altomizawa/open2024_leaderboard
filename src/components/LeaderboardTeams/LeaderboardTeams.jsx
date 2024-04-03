@@ -49,27 +49,27 @@ export default function LeaderboardTeams(){
                 ))}
               </div>
               <div>
-                <p>{calculateTeamEventResult(team.athletes, 'wodOneRanking')}</p>
+                <p>{calculateTeamEventResult(team.athletes, 'wodOneRanking')} pts</p>
                 {team.athletes.map((athlete, index) => (
-                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.wodOneRanking}</p>
+                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.wodOneRanking} pts</p>
                 ))}
               </div>
               <div>
-                <p>{calculateTeamEventResult(team.athletes, 'wodTwoRanking')}</p>
+                <p>{calculateTeamEventResult(team.athletes, 'wodTwoRanking')} pts</p>
                 {team.athletes.map((athlete, index) => (
-                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.wodTwoRanking}</p>
+                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.wodTwoRanking} pts</p>
                 ))}
               </div>
               <div>
-                <p>{calculateTeamEventResult(team.athletes, 'wodThreeRanking')}</p>
+                <p>{calculateTeamEventResult(team.athletes, 'wodThreeRanking')} pts</p>
                 {team.athletes.map((athlete, index) => (
-                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.wodThreeRanking}</p>
+                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.wodThreeRanking} pts</p>
                 ))}
               </div>
               <div>
-                <p>{calculateTeamEventResult(team.athletes, 'finalRanking')}</p>
+                <p>{calculateTeamEventResult(team.athletes, 'finalRanking')} pts</p>
                 {team.athletes.map((athlete, index) => (
-                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.finalRanking}</p>
+                  <p className='leaderboardTeam_athlete-result' key={index}>{athlete.finalRanking} pts</p>
                 ))}
               </div>
             </div>            

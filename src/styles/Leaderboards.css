@@ -2,6 +2,7 @@
   margin-top: 20px;
   width: 90%;
   margin-inline: auto;
+  max-width: 1280px;
 }
 
 .leaderboard__selectorWrapper{
