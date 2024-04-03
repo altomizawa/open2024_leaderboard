@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 0.5fr 2.5fr 1fr 1fr 1fr 1fr;
     border: 1px solid grey;
-    padding-inline: 1rem;
+    padding: 1rem;
   }
   
   .leaderboardTeams__header h2 {
