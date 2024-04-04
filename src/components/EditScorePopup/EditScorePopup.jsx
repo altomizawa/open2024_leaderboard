@@ -5,10 +5,18 @@ import TimeInput from "../TimeInput/TimeInput";
 export default function EditScorePopup(props) {
   const [didAthleteFinish, setDidAthleteFinish] = useState(true)
   const [timeInput, setTimeInput] = useState('')
-  const [input, setInput] = useState()
+  const [input, setInput] = useState(
+    {
+      wodOneTime: 0,
+      wodOneResult: 0,
+      wodTwoResult: 0,
+      wodThreeTime: 0,
+      wodThreeResult: 0,
+    }
+  )
 
-  const { closeAllPopups, wodNumber } = props;
-  
+  const { closeAllPopups, wodNumber, user } = props;
+  console.log(user)
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input)
@@ -26,21 +34,25 @@ export default function EditScorePopup(props) {
     //   return data}
   }
 
-  useEffect(() => {
-    let timeResult = parseInt(timeInput.minutes*60)+parseInt(timeInput.seconds)
-    wodNumber === '1' ? 
-    setInput({
-      wodOneResult: timeResult
-    }) :
-    setInput({
-      wodThreeResult: timeResult
-    }) 
-  },[timeInput])
+  // useEffect(() => {
+  //   let timeResult = parseInt(timeInput.minutes*60)+parseInt(timeInput.seconds)
+  //   wodNumber === '1' ?
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     wodOneResult: 180,
+  //     wodOneTime: timeResult
+  //   })) :
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     wodThreeResult: 180,
+  //     wodThreeTime: timeResult
+  //   })) 
+  // },[timeInput])
 
   const handleInput = (e) => {
     if (!didAthleteFinish && e.target.value.length<4) {
       const { name, value } = e.target
-      setInput((prevInput) => (
+      setInput((prevInput) => (  
         {
           ...prevInput,
           [name]: value,
@@ -77,15 +89,20 @@ export default function EditScorePopup(props) {
         </div>
         <h3 className='editScorePopup__score-label'>
           {didAthleteFinish ? 'Final time:' : 'Total Reps:'}</h3>
-          {didAthleteFinish ? <TimeInput
-            handleInput={handleInput}
-            input={input}
-            timeInput={timeInput}
+          <TimeInput
+            wodNumber = {wodNumber}
+            didAthleteFinish={didAthleteFinish}
+            setInput={setInput}
+            />
+          {/* {didAthleteFinish ? <TimeInput
+            wodNumber = {wodNumber}
+            didAthleteFinish={didAthleteFinish}
+            setInput={setInput}
             /> : <input
             name={wodNumber === '1' ? 'wodOneResult' : 'wodThreeResult'}
             className='editScorePopup__form-input'
             type='number'
-            onChange={handleInput}/>}
+            onChange={handleInput}/>} */}
         <div className='editScorePopup__form-button-wrapper'>
           <button type='button' className='editScorePopup__form-button editScorePopup__form-button_cancel' onClick={closeAllPopups}>CANCEL</button>
           <button type='submit' className='editScorePopup__form-button'>SUBMIT</button>

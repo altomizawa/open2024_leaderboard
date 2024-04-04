@@ -66,8 +66,9 @@ export default function EditPlayerScore() {
 
   // SET USER
   useEffect(() => {
-    userToEdit().then(user => setUser(user))
+    userToEdit().then((user) => {console.log(user)})
   }, [])
+
 
   return(
     <>
@@ -86,6 +87,7 @@ export default function EditPlayerScore() {
         <button className='editplayerscore__wod-selector editplayerscore__back-button' onClick={cancelEditing}>VOLTAR</button>
         {isFirstPopupOpen && <EditScorePopup
           closeAllPopups={closeAllPopups}
+          user={user}
           wodNumber = '1' />
         }
         {isThirdPopupOpen && <EditScorePopup
