@@ -16,3 +16,7 @@
   border: none;
   color: black;
 }
+
+.timeInput__input::placeholder{
+  color: lightgrey;
+}

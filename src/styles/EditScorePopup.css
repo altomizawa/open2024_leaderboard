@@ -70,6 +70,10 @@
     color: black;
 }
 
+.editScorePopup__form-input::placeholder{
+    color: lightgray;
+}
+
 .editScorePopup__form-button-wrapper{
     width:50%;
     margin-inline:auto;

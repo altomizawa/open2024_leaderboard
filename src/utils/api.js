@@ -36,7 +36,7 @@ class Api {
     }
 
     changeUserScore (userId, scores) {
-        return this._makeFetchRequest(`${BASE_URL}/athletes/${userId}/scores`, 'PATCH', scores)
+        return this._makeFetchRequest(`${BASE_URL}/athletes/${userId}`, 'PATCH', scores)
     }
 
     getTeams () {

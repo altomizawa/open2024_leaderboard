@@ -6,9 +6,6 @@ import EditScorePopup from "../components/EditScorePopup/EditScorePopup";
 
 export default function EditPlayerScore() {
   const [user, setUser] = useState({})
-  const [isFirstPopupOpen, setIsFirstPopupOpen] = useState(false);
-  const [isSecondPopupOpen, setIsSecondPopupOpen] = useState(false);
-  const [isThirdPopupOpen, setIsThirdPopupOpen] = useState(false);
   const [wodNumber, setWodNumber] = useState(null)
   const navigate = useNavigate();
   const {id} = useParams();
@@ -17,56 +14,19 @@ export default function EditPlayerScore() {
     const user = await requestApi.getUserById(id)
     return user;
   }
-  const [wodResults, setWodResults] = useState({
-    wodOneTime: undefined,
-    wodOneResult: undefined,
-    wodTwoResult: undefined,
-    wodThreeTime: undefined,
-    wodThreeResult: undefined,
-  })
-
-  function resetWodResults(){
-    setWodResults({
-      wodOneTime: undefined,
-      wodOneResult: undefined,
-      wodTwoResult: undefined,
-      wodThreeTime: undefined,
-      wodThreeResult: undefined,
-    })
-  }
 
   const closeAllPopups = () => {
-    setIsFirstPopupOpen(false);
-    setIsSecondPopupOpen(false);
-    setIsThirdPopupOpen(false);
+    setWodNumber(null)
   }
-  
-  const submitWodResults = (e) => {
-    e.preventDefault();
-    requestApi.changeUserScore(id, wodResults)
-    .then (user => console.log(user))
-    resetWodResults();
-    navigate('/admin')
-  }
-  
-  const handleWodResultsInput = (e) => {
-    const {name, value} = e.target;
-    setWodResults(
-      prevState => ({
-      ...prevState, [name]: value
-      })
-    );
-  };
 
   // CANCEL EDITING SCORES
   const cancelEditing = () => {
-    resetWodResults();
     navigate('/admin')
   }
 
   // SET USER
   useEffect(() => {
-    userToEdit().then((user) => {console.log(user)})
+    userToEdit().then((user) => setUser(user))
   }, [])
 
 
@@ -75,25 +35,26 @@ export default function EditPlayerScore() {
       <div className='editplayerscore'>
         <h2 className='editplayerscore__title'>Editing scores for {user.name}</h2>
         <h3 className='editplayerscore__subtitle'>Pick a WOD to change the score</h3>
+
         <button className='editplayerscore__wod-selector' onClick={() => {
-          setIsFirstPopupOpen(true)
           setWodNumber(1)
           }}>24.1</button>
-        <button className='editplayerscore__wod-selector'>24.2</button>
+
         <button className='editplayerscore__wod-selector' onClick={() => {
-          setIsThirdPopupOpen(true)
+          setWodNumber(2)
+        }}>24.2</button>
+
+        <button className='editplayerscore__wod-selector' onClick={() => {
           setWodNumber(3)
-          }}>24.3  </button>
+          }}>24.3</button>
+
         <button className='editplayerscore__wod-selector editplayerscore__back-button' onClick={cancelEditing}>VOLTAR</button>
-        {isFirstPopupOpen && <EditScorePopup
+        
+        {wodNumber && <EditScorePopup
           closeAllPopups={closeAllPopups}
+          setUser={setUser}
           user={user}
-          wodNumber = '1' />
-        }
-        {isThirdPopupOpen && <EditScorePopup
-          closeAllPopups={closeAllPopups}
-          wodNumber = '3' 
-          />
+          wodNumber = {wodNumber} />
         }
       </div>
     </>
