@@ -17,12 +17,16 @@ export default function EditScorePopup(props) {
     wodThreeResult: user.wodThreeResult,
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(input)
-    requestApi.changeUserScore(user._id, input)
-    .then(user => setUser(user))
-    closeAllPopups();
+    try{
+      const updatedUser = await requestApi.changeUserScore(user._id, input);
+      setUser(updatedUser);
+      closeAllPopups();
+
+    } catch (error) {
+      console.error('Error updating user score', error)
+    }
   }
  
   return( 
