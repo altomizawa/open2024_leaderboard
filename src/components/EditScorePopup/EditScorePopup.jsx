@@ -20,8 +20,8 @@ export default function EditScorePopup(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input)
-    // requestApi.changeUserScore(user._id, input)
-    // .then(user => setUser(user))
+    requestApi.changeUserScore(user._id, input)
+    .then(user => setUser(user))
     closeAllPopups();
   }
  
@@ -49,6 +49,7 @@ export default function EditScorePopup(props) {
               wodNumber = {wodNumber}
               didAthleteFinish={didAthleteFinish}
               setInput={setInput}
+              input={input}
               user={user}
               />
         </div>}
