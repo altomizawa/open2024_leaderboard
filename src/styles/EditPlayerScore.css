@@ -17,12 +17,16 @@
 }
 
 .editplayerscore__wod-selector{
+    background-color: rgba(0,0,0,0);
     width: 50%;
+    max-width: 600px;
     margin-inline: auto;
+    border: 1px solid grey;
 }
 
 .editplayerscore__back-button{
     background-color: rgb(249,62,62);
+    border: none;
 }
 
 .editplayerscore__form{

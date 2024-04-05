@@ -23,7 +23,7 @@ export default function EditScorePopup(props) {
       const updatedUser = await requestApi.changeUserScore(user._id, input);
       setUser(updatedUser);
       closeAllPopups();
-
+      const newRanking = await requestApi.createRanking({category: user.category})
     } catch (error) {
       console.error('Error updating user score', error)
     }
@@ -48,7 +48,7 @@ export default function EditScorePopup(props) {
             </div>
           </div>
           <h3 className='editScorePopup__score-label'>
-            {didAthleteFinish ? 'Final time:' : 'Total Reps:'}</h3>
+            {didAthleteFinish ? 'FINAL TIME:' : 'TOTAL REPS:'}</h3>
             <TimeInput
               wodNumber = {wodNumber}
               didAthleteFinish={didAthleteFinish}

@@ -41,8 +41,11 @@
 }
 
 .title {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin-top: 60px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .selector {
