@@ -44,7 +44,6 @@ export default function TimeInput(props) {
         } else return 
       } if (e.target.value.length < 4) {
         setThisInput(prevState => ({...prevState, [name]: parseFloat(target.value)}))
-        console.log(thisInput)
       } 
     }
     
