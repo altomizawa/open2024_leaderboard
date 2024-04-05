@@ -41,7 +41,7 @@ export default function LeaderboardTeams(){
             <div className='leaderboardTeams__line' key={team._id}>
               <p>{index+1}</p>
               <div>
-                <p className='leaderboardTeams__name'>{team._id}<span style={{color: 'grey'}}> {index+1}</span></p>
+                <p className='leaderboardTeams__name'>{team._id}<span style={{color: 'grey'}}> ({index+1})</span></p>
                 {team.athletes.map((athlete) => (
                   <div className='leaderboardTeams__athletes' key={athlete._id}>
                     <p className='leaderboardTeams__team-name'>{athlete.name}</p>
