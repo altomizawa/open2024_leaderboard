@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Leaderboards from './pages/Leaderboards'
 import EditPlayerScore from './pages/EditPlayerScore'
 import NotFoundPage from './pages/NotFoundPage'
+import Register from './pages/Register'
 
 function App() {
   const [isLoginPopupActive, setIsLoginPopupActive] = useState(false)
@@ -22,10 +23,9 @@ function App() {
     setIsLoginPopupActive(true)
   }
 
-  const handleClosePopup = (e) => {
+  const handleClosePopup = () => {
     setIsLoginPopupActive(false)
-    console.log(e.target)
-    console.log(popupRef.current)
+    navigate('/')
   }
 
 
@@ -42,6 +42,7 @@ function App() {
         {/* <img src={korLogo} className={styles.logo}></img> */}
         <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
       <Routes>
+        <Route path='/register' element={<Register popupRef={popupRef} handleClosePopup={handleClosePopup}/>}/>
         <Route path='/admin' element={<Admin />} />
         <Route path='/' element={<Leaderboards />} />
         <Route path='/:id/editscore' element={<EditPlayerScore />} />
