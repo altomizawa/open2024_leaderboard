@@ -14,3 +14,7 @@
 .header__button{
     height:40px;
 }
+
+.header__login{
+    position: relative;
+}

@@ -1,4 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
+import { useState , useRef } from 'react'
 import styles from '../src/App.module.css'
 
 import korLogo from './assets/kor-logo.svg'
@@ -6,19 +7,36 @@ import korLogo from './assets/kor-logo.svg'
 import './App.css'
 
 import Admin from './pages/Admin'
-
+import Login from './pages/Login'
 import Leaderboards from './pages/Leaderboards'
 import EditPlayerScore from './pages/EditPlayerScore'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
+  const [isLoginPopupActive, setIsLoginPopupActive] = useState(false)
+  const popupRef = useRef(null);
+
   const navigate = useNavigate();
+  
+  const handleOpenPopup = () => {
+    setIsLoginPopupActive(true)
+  }
+
+  const handleClosePopup = (e) => {
+    setIsLoginPopupActive(false)
+    console.log(e.target)
+    console.log(popupRef.current)
+  }
+
 
   return (
     <>
       <header className='header'>
         <img src={korLogo} onClick={() => navigate('/')} className='header__logo'/>
-        <button onClick={() => navigate('/admin')} className='header__button'>LOGIN</button>
+        <div className='header__login'>
+          <button onClick={handleOpenPopup} className='header__button'>LOGIN</button>
+          {isLoginPopupActive && <Login handleClosePopup={handleClosePopup} popupRef={popupRef} navigate={navigate}/> }
+        </div>
       </header>
       <div>
         {/* <img src={korLogo} className={styles.logo}></img> */}
