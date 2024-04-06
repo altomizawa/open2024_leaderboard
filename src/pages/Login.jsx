@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
+import Teste from "./Teste";
 
 export default function Login(props) {
   const [input, setInput] = useState({})
@@ -72,7 +73,7 @@ export default function Login(props) {
     }
     console.error('Username or Password incorrect')
   }
-  console.log(Math.random()*10)
+  console.log('parent rendered')
 
 
   return (
@@ -93,6 +94,7 @@ export default function Login(props) {
         <p className='login__paragraph'>Not a member? <a className='login__link'>Sign up now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
         <h2 className='login__background-type'>SIGN IN</h2>
+        <Teste />
       </form>
     </div>
   )
