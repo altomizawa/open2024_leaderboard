@@ -20,8 +20,10 @@ export default function EditScorePopup(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const updatedUser = await requestApi.changeUserScore(user._id, input);
-      setUser(updatedUser);
+      requestApi.changeUserScore(user._id, input).then((res)=>console.log(res))
+      // const updatedUser = await requestApi.changeUserScore(user._id, input);
+      // console.log(updatedUser)
+      // setUser(updatedUser);
       closeAllPopups();
       const newRanking = await requestApi.createRanking({category: user.category})
     } catch (error) {

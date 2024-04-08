@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { useState , useRef } from 'react'
+import { useState , useRef, useEffect } from 'react'
 import styles from '../src/App.module.css'
 
 import korLogo from './assets/kor-logo.svg'
@@ -15,6 +15,8 @@ import Register from './pages/Register'
 
 function App() {
   const [isLoginPopupActive, setIsLoginPopupActive] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const popupRef = useRef(null);
 
   const navigate = useNavigate();
@@ -28,14 +30,30 @@ function App() {
     navigate('/')
   }
 
+  // HANDLE LOGIN AFTER TOKEN CHECK
+  const handleLogin = (token) => {
+    console.log('login successfull')
+    setIsLoggedIn(true)
+    handleClosePopup();
+  }
+
+  // CHECK FOR PREVIOUS TOKEN AND LOGIN IF EXISTS
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    token ? handleLogin(token) : console.log('there is no token')
+  },[])
+
 
   return (
     <>
       <header className='header'>
         <img src={korLogo} onClick={() => navigate('/')} className='header__logo'/>
         <div className='header__login'>
-          <button onClick={handleOpenPopup} className='header__button'>LOGIN</button>
-          {isLoginPopupActive && <Login handleClosePopup={handleClosePopup} popupRef={popupRef} navigate={navigate}/> }
+          {isLoggedIn ? 
+            <button onClick={() => {navigate('/admin')}} className='header__button'>GO TO ADMIN</button>
+           : <button onClick={handleOpenPopup} className='header__button'>LOGIN</button>
+          }
+          {isLoginPopupActive && <Login handleClosePopup={handleClosePopup} popupRef={popupRef} navigate={navigate} handleLogin={handleLogin} /> }
         </div>
       </header>
       <div>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 
+import authApi from "../utils/auth";
+
 export default function Register(props) {
   const [input, setInput] = useState({})
   const [isFormValid, setIsFormValid] = useState(false)
@@ -20,11 +22,19 @@ export default function Register(props) {
       [name]: value
     }))
   }
+
+  // VALIDATE NAME
+  const validateName = (name) => {
+    const regexName = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+    if (name && name.length<4) {
+      return regexName.test(name)&&name.length>4 ? '' : 'Invalid name. Please ensure it only has letter and spaces'
+    }
+  }
   
   // VALIDATE EMAIL
   const validateEmail = (email) => {
     const regexEmail = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (email && email.length > 0) {
+    if (email) {
       return regexEmail.test(email) ? '' : 'Please enter a valid email address.'
     }
   }
@@ -46,6 +56,14 @@ export default function Register(props) {
 
   // CREATE INPUTS
   const inputs = [
+    {
+      name: 'name',
+      type: 'string',
+      placeholder: 'FULL NAME',
+      required: true,
+      errorMessage: validateName(input.name),
+      className: 'login__input',
+    },
     {
       name: 'email',
       type: 'email',
@@ -78,14 +96,18 @@ export default function Register(props) {
     } else {setIsFormValid(false)}
   }, [input])
 
+  // SUBMIT FORM
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      console.log(input);
+      const newUser = await authApi.createUser(input)
+      if (!newUser) {
+        return console.log('user not created')
+      }
       navigate('/admin');
       handleClosePopup();
       return;
-    } catch(err){console.error('Username or Password incorrect')}
+    } catch(err){console.error('user already in database', err.message)}
   }
 
   return (
@@ -95,7 +117,7 @@ export default function Register(props) {
         <h2 className='login__title'>SIGN UP</h2>
         {inputs.map((input) => (
           <>
-            <input key={input.name} name={input.name} type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} />
+            <input key={input.name} name={input.name} type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} autoComplete='true' />
             <span style={{color: 'grey', fontWeight: 200}}>{input.errorMessage}</span>
           </>
         ))}

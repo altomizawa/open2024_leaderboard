@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 
+import authApi from "../utils/auth";
+
 export default function Login(props) {
   const [input, setInput] = useState({})
   const [isFormValid, setIsFormValid] = useState(false)
 
-  const { handleClosePopup, popupRef} = props;
+  const { handleClosePopup, popupRef, handleLogin} = props;
 
   
   const navigate = useNavigate();
@@ -66,11 +68,14 @@ export default function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      console.log(input);
-      navigate('/admin');
-      handleClosePopup();
+      const token = await authApi.signIn(input)
+      // 
+      if(!token) {throw new Error('could not sign in')}
+      
+      localStorage.setItem('token', token)
+      handleLogin(localStorage.getItem('token'))
       return;
-    } catch(err){console.error('Username or Password incorrect')}
+    } catch(err){console.error(err)}
   }
 
   return (
