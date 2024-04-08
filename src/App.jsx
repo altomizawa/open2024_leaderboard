@@ -37,6 +37,12 @@ function App() {
     handleClosePopup();
   }
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+
   // CHECK FOR PREVIOUS TOKEN AND LOGIN IF EXISTS
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -50,7 +56,10 @@ function App() {
         <img src={korLogo} onClick={() => navigate('/')} className='header__logo'/>
         <div className='header__login'>
           {isLoggedIn ? 
+            (<>
             <button onClick={() => {navigate('/admin')}} className='header__button'>GO TO ADMIN</button>
+            <button onClick={handleLogout} className='header__button'>LOG OUT</button>            
+            </>)
            : <button onClick={handleOpenPopup} className='header__button'>LOGIN</button>
           }
           {isLoginPopupActive && <Login handleClosePopup={handleClosePopup} popupRef={popupRef} navigate={navigate} handleLogin={handleLogin} /> }
