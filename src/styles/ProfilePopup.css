@@ -1,8 +1,8 @@
-.profile{
-  width: 150px;
+.profilePopup{
+  width: 250px;
   position: absolute;
-  top: 10%;
-  right: 10%;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   border: 1px solid white;
@@ -10,7 +10,7 @@
   background-color: darkslategrey;
 }
 
-.profile__picture{
+.profilePopup__picture{
   margin-top: 1rem;
   width: 75px;
   overflow: hidden;
@@ -19,9 +19,22 @@
   object-fit: cover;
 }
 
-.profile__link-wrapper{
+.profilePopup__link-wrapper{
   margin-block: 2rem;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+}
+
+.profilePopup__link{
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.profilePopup__close-btn{
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
 }

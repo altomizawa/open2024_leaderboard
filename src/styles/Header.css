@@ -8,7 +8,7 @@
 }
 
 .header__logo{
-    width: 100px;
+    width: 75px;
 }
 
 .header__button{
@@ -17,4 +17,18 @@
 
 .header__login{
     position: relative;
+}
+
+.header__profile-img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 250ms ease;
+}
+
+.header__profile-img:hover{
+    border: 1px solid white;
+    opacity: 50%;
 }
