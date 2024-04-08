@@ -1,0 +1,27 @@
+.profile{
+  width: 150px;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: darkslategrey;
+}
+
+.profile__picture{
+  margin-top: 1rem;
+  width: 75px;
+  overflow: hidden;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.profile__link-wrapper{
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
