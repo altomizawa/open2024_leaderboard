@@ -2,9 +2,12 @@ import { useNavigate } from "react-router-dom";
 import requestApi from "../utils/api"
 import { useState } from "react";
 
+import Loader from "../components/Loader/Loader";
+
 export default function Admin() {
   const [users, setUsers] = useState([])
   const [searchInput, setSearchInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false)
 
   const navigate = useNavigate();
 
@@ -15,8 +18,10 @@ export default function Admin() {
         name: {$regex: searchInput, $options: 'i'}
       }
     }
+    setIsLoading(true);
     const searchResults = await requestApi.getAllUsers(options)
     setUsers(searchResults)
+    setIsLoading(false)
   }
 
 
@@ -63,6 +68,7 @@ export default function Admin() {
           </li>
         </div>
       ))}
+      {isLoading && <Loader />}
     </div>
   )
 }

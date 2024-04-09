@@ -5,13 +5,17 @@ import sortIcon from '../../assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
 import requestApi from '../../utils/api';
 
 import LeaderboardItemTeams from '../LeaderboardItemTeams/LeaderboardItemTeams';
+import Loader from '../Loader/Loader';
 
 export default function LeaderboardTeams(){
   const[teams, setTeams] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const getTeamLeaderboard = async() => {
+    setIsLoading(true);
     const teamLeaderboard = await requestApi.getTeams();
     setTeams(teamLeaderboard)
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -74,6 +78,7 @@ export default function LeaderboardTeams(){
               </div>
             </div>            
           ))}
+          {isLoading && <Loader />}
         </ul>
        
 

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import sortIcon from '../../assets/sort_FILL0_wght400_GRAD0_opsz24.svg'
 
+import Loader from "../Loader/Loader";
+
 import requestApi from "../../utils/api";
 
 export default function IndividualLeaderboard() {
@@ -11,11 +13,14 @@ export default function IndividualLeaderboard() {
   const [ascendingWodThree, setAscendingWodThree] = useState(false);
   const [ascendingTotal, setAscendingTotal] = useState(false);
   const [category, setCategory] = useState('RX')
+  const [isLoading, setIsLoading] = useState(false);
 
       // REQUESTS FOR ALL FILTERS
   const filterRequest = async (options) => {
+    setIsLoading(true)
     const sortedRanking = await requestApi.getAllUsers(options)
     setCurrentLeaderboard(sortedRanking)
+    setIsLoading(false)
   }
 
   // HANDLE CATEGORY CHANGE
@@ -214,6 +219,7 @@ export default function IndividualLeaderboard() {
               <p className='leaderboard__text'>{athlete.totalPoints}<span> pts</span></p>
             </li>
           ))}
+          {isLoading && <Loader />}
         </ul>
       </div>
     )

@@ -19,6 +19,8 @@ function App() {
   const [isLoginPopupActive, setIsLoginPopupActive] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({})
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const popupRef = useRef(null);
 
@@ -76,7 +78,6 @@ function App() {
         <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
       <Routes>
         <Route path='/' element={<Leaderboards />} />
-        {/* <Route path='/admin' element={<Admin />} /> */}
         <Route path='/admin' element={
           <ProtectedRoute isLoggedIn={isLoggedIn} />}>
             <Route path='/admin' element={<Admin />} />

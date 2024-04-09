@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+
 import IndividualLeaderboard from '../components/IndividualLeaderboard/IndividualLeaderboard'
 import LeaderboardTeams from '../components/LeaderboardTeams/LeaderboardTeams'
 
