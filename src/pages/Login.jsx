@@ -89,7 +89,7 @@ export default function Login(props) {
             <span style={{color: 'grey', fontWeight: 200}}>{input.errorMessage}</span>
           </>
         ))}
-        <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p>
+        {/* <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p> */}
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
         <h2 className='login__background-type'>SIGN IN</h2>
       </form>
