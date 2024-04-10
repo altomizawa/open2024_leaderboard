@@ -23,10 +23,9 @@
   justify-content: center;
   row-gap: 1em;
   width: 60%;
-  /* height: 50%; */
+  max-width: 1280px;
   margin-inline: auto;
   padding: 1rem 2rem;
-  /* border: 1px solid grey; */
   border-radius: 12px;
   overflow: hidden;
 }
@@ -108,6 +107,14 @@
 
   .login__title{
     font-size: 13vw;
+  }
+
+  .login__input{
+    font-size: 1.1rem;
+  }
+
+  .login__button{
+    font-size: 1.1rem;;
   }
 
 
