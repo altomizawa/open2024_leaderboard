@@ -10,8 +10,8 @@ export default function Leaderboards() {
   return (
     <div className='leaderboard'>
       <div className='leaderboard__selectorWrapper'>
-        <button className='leaderboard.selector' onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
-        <button className='leaderboard.selector' onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
+        <button className='leaderboard__selector' onClick={() => {setIsTeamsSelected(false)}}>Individual</button>
+        <button className='leaderboard__selector' onClick={() => {setIsTeamsSelected(true)}}>Equipes</button>
       </div>
 
       {!isTeamsSelected && <IndividualLeaderboard />}

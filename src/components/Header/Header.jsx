@@ -22,7 +22,7 @@ export default function Header(props) {
            : <button onClick={handleOpenPopup} className='header__button'>LOGIN</button>
           }
           {isProfilePopupOpen && <ProfilePopup handleLogout={handleLogout} user={user} setIsProfilePopupOpen={setIsProfilePopupOpen} />}
-          {isLoginPopupActive && <Login handleClosePopup={handleClosePopup} popupRef={popupRef} navigate={navigate} handleLogin={handleLogin} /> }
+          <Login handleClosePopup={handleClosePopup} popupRef={popupRef} navigate={navigate} handleLogin={handleLogin} isLoginPopupActive={isLoginPopupActive}/>
         </div>
       </header>
         </>

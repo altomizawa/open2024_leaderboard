@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import authApi from "../utils/auth";
 
 export default function Login(props) {
-  const [input, setInput] = useState({})
+  const [formInput, setFormInput] = useState({})
   const [isFormValid, setIsFormValid] = useState(false)
 
-  const { handleClosePopup, popupRef, handleLogin} = props;
+  const { handleClosePopup, popupRef, handleLogin, isLoginPopupActive} = props;
 
   
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function Login(props) {
     const name = e.target.name;
     const value = e.target.value;
     
-    setInput(prevState => ({
+    setFormInput(prevState => ({
       ...prevState,
       [name]: value
     }))
@@ -46,30 +46,53 @@ export default function Login(props) {
       type: 'email',
       placeholder: 'EMAIL',
       required: true,
-      errorMessage: validateEmail(input.email),
+      errorMessage: validateEmail(formInput.email),
       className: 'login__input',
+      value: formInput.email,
     },
     {
       name: 'password',
       type: 'password',
       placeholder: 'PASSWORD',
       required: true,
-      errorMessage: validatePassword(input.password),
+      errorMessage: validatePassword(formInput.password),
       className: 'login__input',
+      value: formInput.password
     }
   ]
 
+  // CLEAR INPUTS
+  const clearInputs = () => {
+    setTimeout(() => {
+      setFormInput({
+        email: '',
+        password: '',
+      })
+    },500)  // DELAY SO USER DOESN'T SEE INPUT CHANGING
+       
+  }
+
+  // HANDLE CLOSE POPUP
+  const closePopup = () => {
+    handleClosePopup();
+    clearInputs();
+  }
+
   useEffect(() => {
-    if(input.email && input.password) {
+    if(formInput.email && formInput.password) {
       setIsFormValid(true)
     }
-  }, [input])
+  }, [formInput])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const token = await authApi.signIn(input)
-      // 
+      const token = await authApi.signIn(formInput)
+      
+      // CLEAR INPUTS
+      clearInputs()
+
+      // NO TOKEN RETURNED
       if(!token) {throw new Error('could not sign in')}
       
       localStorage.setItem('token', token)
@@ -79,19 +102,18 @@ export default function Login(props) {
   }
 
   return (
-    <div className='login'>
+    <div className={isLoginPopupActive ? 'login' : 'login login_inactive'}>
       <form className='login__form' ref={popupRef} onSubmit={handleSubmit}>
-        <h2 className='login__close-btn' onClick={handleClosePopup}>X</h2>
+        <button className='login__close-btn' onClick={closePopup}>CLOSE</button>
         <h2 className='login__title'>SIGN IN</h2>
         {inputs.map((input) => (
           <>
-            <input name={input.name} type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} />
-            <span style={{color: 'grey', fontWeight: 200}}>{input.errorMessage}</span>
+            <input name={input.name} value={input.value}type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} />
+            <span style={{color: 'darkslategrey', fontWeight: 200}}>{input.errorMessage}</span>
           </>
         ))}
         {/* <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p> */}
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
-        <h2 className='login__background-type'>SIGN IN</h2>
       </form>
     </div>
   )
