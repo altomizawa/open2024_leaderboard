@@ -43,7 +43,7 @@ function App() {
     }
     setUser(loggedUser)
     setIsLoggedIn(true)
-    handleClosePopup();
+    // handleClosePopup();
   }
 
   const handleLogout = () => {

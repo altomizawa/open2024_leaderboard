@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import authApi from "../utils/auth";
 
 import ErrorBox from "../components/ErrorBox";
+import SuccessBox from '../components/SuccessBox'
 
 export default function Login(props) {
   const [formInput, setFormInput] = useState({})
   const [isFormValid, setIsFormValid] = useState(false)
   const [isErrorBoxActive, setIsErrorBoxActive] = useState(false)
+  const [isLoginSuccessful, setIsLoginSuccessful] = useState(false)
 
   const { handleClosePopup, popupRef, handleLogin, isLoginPopupActive} = props;
 
@@ -97,11 +99,20 @@ export default function Login(props) {
       clearInputs()
 
       // NO TOKEN RETURNED
-      if(!token) {throw new Error('could not sign in')}
-      
+      if(!token) {
+        throw new Error('could not sign in')
+      }
+      // TOKEN RETURNED SET LOCAL STORAGE
       localStorage.setItem('token', token)
+      
+      // CLOSE ERRORPOPUP IS ACTIVE
+      setIsErrorBoxActive(false)
+
+      // LOGIN USING TOKEN
       handleLogin(localStorage.getItem('token'))
-      console.log('this should not appear')
+
+      // DISPLAY LOGIN SUCCESSFUL MESSAGE
+      setIsLoginSuccessful(true)
       return;
     } catch(err){
       setIsErrorBoxActive(true)
@@ -110,8 +121,9 @@ export default function Login(props) {
 
   return (
     <div className={isLoginPopupActive ? 'login' : 'login login_inactive'}>
-      <form className='login__form' ref={popupRef} onSubmit={handleSubmit}>
-        <button className='login__close-btn' onClick={closePopup}>CLOSE</button>
+      {isLoginSuccessful && <SuccessBox setIsLoginSuccessful={setIsLoginSuccessful} closePopup={closePopup}/>}
+      <form className='login__form' onSubmit={handleSubmit}>
+        <button type='button' className='login__close-btn' onClick={closePopup}>CLOSE</button>
         <h2 className='login__title'>SIGN IN</h2>
       {isErrorBoxActive && <ErrorBox type='login'/>}
         {inputs.map((input) => (

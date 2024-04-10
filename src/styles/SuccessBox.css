@@ -1,0 +1,33 @@
+.successbox{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgb(49,79,79);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.successbox__wrapper{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding-block: 1rem;
+}
+
+.successbox__title{
+    font-size: 4rem;
+}
+
+.successbox__message{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.successbox__button{
+    width: 100%;
+}
