@@ -1,0 +1,21 @@
+.errorbox{
+    background-color: #767b8d;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-inline: auto;
+    color: white;
+    font-weight: 200;
+}
+
+.errorbox__message{
+    margin-top: 0.5rem;
+}
+
+.errorbox__link{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.errorbox__link:hover{
+    color: black
+}

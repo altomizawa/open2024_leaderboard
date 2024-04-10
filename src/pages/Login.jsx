@@ -3,15 +3,20 @@ import { useNavigate } from 'react-router-dom'
 
 import authApi from "../utils/auth";
 
+import ErrorBox from "../components/ErrorBox";
+
 export default function Login(props) {
   const [formInput, setFormInput] = useState({})
   const [isFormValid, setIsFormValid] = useState(false)
+  const [isErrorBoxActive, setIsErrorBoxActive] = useState(false)
 
   const { handleClosePopup, popupRef, handleLogin, isLoginPopupActive} = props;
 
   
   const navigate = useNavigate();
   
+  const regexEmail = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
   
   const handleInput = (e) => {
     const name = e.target.name;
@@ -23,7 +28,6 @@ export default function Login(props) {
     }))
   }
   
-  const regexEmail = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   // VALIDATE EMAIL
   const validateEmail = (email) => {
     if (email && email.length > 0) {
@@ -31,7 +35,6 @@ export default function Login(props) {
     }
   }
   
-  const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
   // VALIDATE PASSWORD
   const validatePassword = (password) => {
     if (password && password.length > 0) {
@@ -76,10 +79,11 @@ export default function Login(props) {
   const closePopup = () => {
     handleClosePopup();
     clearInputs();
+    setIsErrorBoxActive(false)
   }
 
   useEffect(() => {
-    if(formInput.email && formInput.password) {
+    if(validateEmail(formInput.email)=='' && validatePassword(formInput.password)==='') {
       setIsFormValid(true)
     }
   }, [formInput])
@@ -97,8 +101,11 @@ export default function Login(props) {
       
       localStorage.setItem('token', token)
       handleLogin(localStorage.getItem('token'))
+      console.log('this should not appear')
       return;
-    } catch(err){console.error(err)}
+    } catch(err){
+      setIsErrorBoxActive(true)
+      console.error(err)}
   }
 
   return (
@@ -106,13 +113,14 @@ export default function Login(props) {
       <form className='login__form' ref={popupRef} onSubmit={handleSubmit}>
         <button className='login__close-btn' onClick={closePopup}>CLOSE</button>
         <h2 className='login__title'>SIGN IN</h2>
+      {isErrorBoxActive && <ErrorBox type='login'/>}
         {inputs.map((input) => (
           <>
             <input name={input.name} value={input.value}type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} />
             <span style={{color: 'darkslategrey', fontWeight: 200}}>{input.errorMessage}</span>
           </>
         ))}
-        {/* <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p> */}
+        <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
       </form>
     </div>

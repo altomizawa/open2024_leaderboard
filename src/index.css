@@ -13,6 +13,7 @@
 @import url(../src/styles/LeaderboardTeams.css);
 @import url(../src/styles/Footer.css);
 @import url(../src//styles/Loader.css);
+@import url(../src/styles/ErrorBox.css);
 
 :root {
   font-family: "Inria Sans", sans-serif;

@@ -19,7 +19,9 @@ class Api {
 
     return fetch(url, config)
     .then((res) =>{
-      if (!res.ok) {throw new Error('could fetch request')            }
+      if (!res.ok) {
+        throw new Error('could not fetch request')
+      }
       return res.json();
     })
     .catch((err) => console.log(err));
