@@ -113,17 +113,16 @@ export default function Register(props) {
   return (
     <div className='login'>
       <form className='login__form' onSubmit={handleSubmit}>
-        <h2 className='login__close-btn' onClick={handleClosePopup}>X</h2>
+        <button className='login__close-btn' onClick={handleClosePopup}>CLOSE</button>
         <h2 className='login__title'>SIGN UP</h2>
         {inputs.map((input) => (
           <>
             <input key={input.name} name={input.name} type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} autoComplete='true' />
-            <span style={{color: 'grey', fontWeight: 200}}>{input.errorMessage}</span>
+            <span style={{color: 'darkslategrey', fontWeight: 200}}>{input.errorMessage}</span>
           </>
         ))}
         <p className='login__paragraph'>Not a member? <a className='login__link'>Sign up now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
-        <h2 className='login__background-type'>SIGN UP</h2>
       </form>
     </div>
   )

@@ -93,10 +93,10 @@ export default function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const token = await authApi.signIn(formInput)
-      
       // CLEAR INPUTS
       clearInputs()
+
+      const token = await authApi.signIn(formInput)
 
       // NO TOKEN RETURNED
       if(!token) {
