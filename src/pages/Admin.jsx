@@ -1,23 +1,32 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import requestApi from "../utils/api"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Loader from "../components/Loader/Loader";
 
 export default function Admin() {
   const [users, setUsers] = useState([])
-  const [searchInput, setSearchInput] = useState('');
   const [isLoading, setIsLoading] = useState(false)
+
+  const [searchParams, setSearchParams] = useSearchParams({q:''})
+
+
+  const q = searchParams.get('q')
 
   const navigate = useNavigate();
 
   const submitSearch = async (e) => {
     e.preventDefault();
+    localStorage.setItem('q', q)
     const options = {
       filter: {
-        name: {$regex: searchInput, $options: 'i'}
+        name: {$regex: q, $options: 'i'}
       }
     }
+    fetchData(options)
+  }
+
+  const fetchData = async (options) => {
     setIsLoading(true);
     const searchResults = await requestApi.getAllUsers(options)
     setUsers(searchResults)
@@ -26,7 +35,10 @@ export default function Admin() {
 
 
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value)
+    setSearchParams(prev => {
+      prev.set('q', e.target.value)
+      return prev
+    }, { replace: true })
   }
 
   const handleEditScoreClick = (userId) => {
@@ -37,13 +49,27 @@ export default function Admin() {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-  } 
+  }
+
+  // FETCH DATA FROM LIST 
+  useEffect(() => {
+    const prevSearch = localStorage.getItem('q')
+    if (!prevSearch) {
+      return console.log('nothing to fetch')
+    } 
+    const options = {
+      filter: {
+        name: {$regex: prevSearch, $options: 'i'}
+      }
+    }
+    fetchData(options)
+  },[])
 
   return (
     <div className='admin'>
       <p className='admin__title'>Search athlete by name</p>
       <form className='admin__form' onSubmit={submitSearch}>
-        <input className='admin__form-input' name='search-bar' placeholder="Enter keywords here" onChange={handleSearchInputChange}></input>
+        <input className='admin__form-input' name='search-bar' value={q} placeholder="Enter keywords here" onChange={handleSearchInputChange}></input>
         <button className='admin__form-button' type='submit'>SEARCH</button>
       </form>
       <li className='admin__line admin__line-header'>
