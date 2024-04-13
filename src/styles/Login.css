@@ -23,7 +23,7 @@
   justify-content: center;
   row-gap: 1em;
   width: 60%;
-  max-width: 1280px;
+  max-width: 700px;
   margin-inline: auto;
   padding: 1rem 2rem;
   border-radius: 12px;
@@ -32,7 +32,7 @@
 
 .login__title{
   font-weight: 300;
-  font-size: 6rem;
+  font-size: 4rem;
   text-align: center;
   margin-inline: auto;
   color: darkslategray
@@ -45,7 +45,7 @@
 
 .login__input{
   width: 100%;
-  height: 2.5em;
+  height: 1.5em;
   padding: 3px;
   padding-left: 10px;
   background-color: #a7adb2;
