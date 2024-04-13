@@ -110,6 +110,11 @@ export default function Register(props) {
     } catch(err){console.error('user already in database', err.message)}
   }
 
+  // HANDLE LOGIN LINK IF USER ALREADY HAS AN ACCOUNT
+  const handleLoginNowLink = () => {
+    navigate('/')
+  }
+
   return (
     <div className='login'>
       <form className='login__form' onSubmit={handleSubmit}>
@@ -121,7 +126,7 @@ export default function Register(props) {
             <span style={{color: 'darkslategrey', fontWeight: 200}}>{input.errorMessage}</span>
           </>
         ))}
-        <p className='login__paragraph'>Not a member? <a className='login__link'>Sign up now</a></p>
+        <p className='login__paragraph'>Already a member? <a className='login__link' onClick={handleLoginNowLink}>Login now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
       </form>
     </div>
