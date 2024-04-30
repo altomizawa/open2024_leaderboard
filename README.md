@@ -14,7 +14,7 @@ Another challenge was to order the athletes in events that had a time cap. In ca
 
 ## FEATURES
 Video Overview:
-[![video of leaderboard app for kor](https://img.youtube.com/vi/pPx7u8uJ94c/0.jpg)](https://www.youtube.com/watch?v=pPx7u8uJ94c)
+https://github.com/altomizawa/open2024_leaderboard/assets/45319659/fdc9a23b-2c49-4371-a4ef-0da3f649e516
 
 OPEN ROUTES (NOT SIGNED IN)
 - Signup page for admin (left it open just for demonstration)
@@ -39,4 +39,7 @@ npm run dev
 
 ## FUTURE IMPLEMENTATIONS
 Create a page to signup and login for athletes, so they can register their own scores in the database.
+
+
+
 
