@@ -13,7 +13,6 @@ In the team category, I had to pull the data from the same database and create a
 Another challenge was to order the athletes in events that had a time cap. In case the athlete couldn't finish within the prescribed time, his number of repetitions became his score. His position had to be after all the people that completed.
 
 ## FEATURES
-Video Overview:
 <a href="https://github.com/altomizawa/open2024_leaderboard/assets/45319659/fdc9a23b-2c49-4371-a4ef-0da3f649e516" target="_blank">VIDEO OVERVIEW</a>
 
 
