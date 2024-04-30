@@ -14,7 +14,8 @@ Another challenge was to order the athletes in events that had a time cap. In ca
 
 ## FEATURES
 Video Overview:
-https://github.com/altomizawa/open2024_leaderboard/assets/45319659/fdc9a23b-2c49-4371-a4ef-0da3f649e516
+<a href="https://github.com/altomizawa/open2024_leaderboard/assets/45319659/fdc9a23b-2c49-4371-a4ef-0da3f649e516" target="_blank">VIDEO OVERVIEW</a>
+
 
 OPEN ROUTES (NOT SIGNED IN)
 - Signup page for admin (left it open just for demonstration)
