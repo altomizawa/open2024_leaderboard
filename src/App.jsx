@@ -14,6 +14,7 @@ import Register from './pages/Register'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import requestApi from './utils/api'
 import authApi from './utils/auth'
+import Main from './pages/Main'
 
 function App() {
   const [isLoginPopupActive, setIsLoginPopupActive] = useState(false)
@@ -73,11 +74,10 @@ function App() {
         setUser={setUser}
       />
       
-      <div>
-        {/* <img src={korLogo} className={styles.logo}></img> */}
-        <h1 className={styles.title}>Open 2024 LEADERBOARD</h1>
+      <div className={styles.main}>
+        <h1 className={styles.title}>Open LEADERBOARD</h1>
       <Routes>
-        <Route path='/' element={<Leaderboards />} />
+        <Route path='/' element={<Main />} />
         <Route path='/admin' element={
           <ProtectedRoute isLoggedIn={isLoggedIn} />}>
             <Route path='/admin' element={<Admin />} />

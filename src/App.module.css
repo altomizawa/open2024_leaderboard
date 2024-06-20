@@ -42,10 +42,15 @@
 
 .title {
   font-family: "Inria Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   margin-top: 60px;
-  font-size: 2rem;
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: left;
+  max-width: 1440px;
+  margin-inline: auto;
+  width: 100%;
 }
 
 .selector {
@@ -61,4 +66,23 @@
   width: 100%;
   display: flex;
   column-gap: 10px;
+}
+
+.main{
+ display: flex;
+ flex-direction: column;
+ padding-inline: 4rem;
+}
+
+@media (max-width: 800px) {
+  .main{
+    padding-inline: 0;
+  }
+
+  .title{
+    font-size: 3rem;
+  }
+
+
+  
 }
