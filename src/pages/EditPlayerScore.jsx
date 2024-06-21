@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, useNavigate} from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import requestApi from "../utils/api"
 import EditScorePopup from "../components/EditScorePopup/EditScorePopup";
 // import react from "@vitejs/plugin-react-swc";
@@ -19,10 +19,6 @@ export default function EditPlayerScore() {
     setWodNumber(null)
   }
 
-  // CANCEL EDITING SCORES
-  const cancelEditing = () => {
-    navigate('/admin')
-  }
 
   // SET USER
   useEffect(() => {
@@ -33,7 +29,7 @@ export default function EditPlayerScore() {
   return(
     <>
       <div className='editplayerscore'>
-        <h2 className='editplayerscore__title'>Editing scores for {user.name}</h2>
+        <h2 className='editplayerscore__title'>EDITING SCORES FOR {user.name}</h2>
         <h3 className='editplayerscore__subtitle'>Pick a WOD to change the score</h3>
 
         <button className='editplayerscore__wod-selector' onClick={() => {
@@ -48,7 +44,7 @@ export default function EditPlayerScore() {
           setWodNumber(3)
           }}>24.3</button>
 
-        <button className='editplayerscore__wod-selector editplayerscore__back-button' onClick={cancelEditing}>VOLTAR</button>
+        <button className='editplayerscore__wod-selector editplayerscore__back-button' onClick={() => navigate(-1)}>BACK TO SEARCH</button>
         
         {wodNumber && <EditScorePopup
           closeAllPopups={closeAllPopups}

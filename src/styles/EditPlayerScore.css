@@ -1,5 +1,5 @@
 .editplayerscore{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
 }
 
 .editplayerscore__wod-selector{
-    background-color: rgba(0,0,0,0);
+    /* background-color: rgba(0,0,0,0); */
     width: 50%;
     max-width: 600px;
     margin-inline: auto;
@@ -27,6 +27,10 @@
 .editplayerscore__back-button{
     background-color: rgb(249,62,62);
     border: none;
+}
+
+.editplayerscore__back-button:hover{
+    background-color: rgb(250, 114, 114);
 }
 
 .editplayerscore__form{

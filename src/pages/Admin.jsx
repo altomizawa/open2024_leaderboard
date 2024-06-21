@@ -7,7 +7,6 @@ import Card from '../components/Card'
 
 export default function Admin() {
   const [users, setUsers] = useState([])
-  // const [searchInput, setSearchInput] = useState('');
   const [isLoading, setIsLoading] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams({q:''})
 
@@ -31,21 +30,13 @@ export default function Admin() {
     setIsLoading(false)
   }
 
-
   const handleSearchInputChange = (e) => {
-    // setSearchInput(e.target.value)
     setSearchParams({q: e.target.value})
   }
 
   const handleEditScoreClick = (userId) => {
     navigate(`/${userId}/editscore`)
   }
-
-  function timeConverter(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-  } 
 
   useEffect(() => {
     if (searchParams.get('q')==='') return
@@ -58,7 +49,7 @@ export default function Admin() {
       <h2 className='admin__title'>EDIT ATHLETE SCORE</h2>
       <form className='admin__form' onSubmit={submitSearch}>
         <input className='admin__form-input' name='search-bar' placeholder="Enter keywords here" onChange={handleSearchInputChange}></input>
-        <button className='admin__form-button' type='submit'>SEARCH</button>
+        <button className='admin__form-button' type='submit'>SEARCH ATHLETE</button>
       </form>
       <div className='admin__cards'>
         {users.map((athlete) => (

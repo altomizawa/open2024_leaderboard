@@ -22,7 +22,6 @@ function Main() {
     setCurrentLeaderboard([])
     setIsLoading(true)
     const sortedRanking = await requestApi.getAllUsers(options);
-    console.log(sortedRanking.length)
     setCurrentLeaderboard(sortedRanking)
     setIsLoading(false)
   }
@@ -30,10 +29,10 @@ function Main() {
   useEffect(() => {
     filterRequest({
       filter:{
-        category: 'RX',
+        category: form.category,
       },
       sort:{
-        finalRanking: 1,
+        [form.wod]: 1,
       } 
     });
   },[])
@@ -45,7 +44,7 @@ function Main() {
       <div className='main__cards'>
         {isLoading && <Loader />}
         {currentLeaderboard.map((athlete) => (
-          <Card athlete={athlete} key={athlete.id} />
+          <Card athlete={athlete} key={athlete.id} wod={form.wod}/>
         ))}
       </div>
       {/* <Pagination currentLead erboard={currentLeaderboard}/> */}
