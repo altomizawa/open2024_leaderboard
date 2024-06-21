@@ -2,6 +2,9 @@
   font-size: 5rem;
   text-align: left;
   margin-bottom: 1rem;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
 .main__cards{
