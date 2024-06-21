@@ -5,6 +5,12 @@
   max-width: 1280px;
 }
 
+.admin__title{
+  font-size: 5rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
 .admin__line {
   margin-inline: auto;
   align-items: center;
@@ -28,25 +34,37 @@
 }
 
 .admin__form{
-  margin-inline: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   column-gap: 1rem;
-  margin-block: 2rem;
+  margin-top: 1rem;
 }
 
 .admin__form-input{
   width: 500px;
-  height: 30px;
-  border: none;
+  height: 3rem;
   padding-inline: 15px;
   font-size: 1em;
   font-family: "Inria Sans", sans-serif;
   font-weight: 300;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 
 }
+.admin__cards{
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
 
-.admin__title{
-  font-size: 1.5rem;
+
+.admin__card-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  gap: 1rem;
   margin-top: 3rem;
 }

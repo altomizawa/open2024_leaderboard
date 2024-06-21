@@ -1,18 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import requestApi from "../utils/api"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Loader from "../components/Loader/Loader";
+import Card from '../components/Card'
 
 export default function Admin() {
   const [users, setUsers] = useState([])
-  const [searchInput, setSearchInput] = useState('');
+  // const [searchInput, setSearchInput] = useState('');
   const [isLoading, setIsLoading] = useState(false)
+  const [searchParams, setSearchParams] = useSearchParams({q:''})
 
   const navigate = useNavigate();
 
-  const submitSearch = async (e) => {
+  const submitSearch = (e) => {
     e.preventDefault();
+    getAthletes();
+  }
+
+  const getAthletes = async () => {
+    const searchInput = searchParams.get('q')
     const options = {
       filter: {
         name: {$regex: searchInput, $options: 'i'}
@@ -26,7 +33,8 @@ export default function Admin() {
 
 
   const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value)
+    // setSearchInput(e.target.value)
+    setSearchParams({q: e.target.value})
   }
 
   const handleEditScoreClick = (userId) => {
@@ -39,35 +47,27 @@ export default function Admin() {
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   } 
 
+  useEffect(() => {
+    if (searchParams.get('q')==='') return
+      getAthletes()
+  },[]);
+
+
   return (
     <div className='admin'>
-      <p className='admin__title'>Search athlete by name</p>
+      <h2 className='admin__title'>EDIT ATHLETE SCORE</h2>
       <form className='admin__form' onSubmit={submitSearch}>
         <input className='admin__form-input' name='search-bar' placeholder="Enter keywords here" onChange={handleSearchInputChange}></input>
         <button className='admin__form-button' type='submit'>SEARCH</button>
       </form>
-      <li className='admin__line admin__line-header'>
-          <p></p>
-          <p>Name</p>
-          <p>Rx/Scaled</p>
-          <p>WOD 1</p>
-          <p>WOD 2</p>
-          <p>WOD 3</p>
-          <p>TOTAL</p>
-        </li>
-      {users.map((user) => (
-        <div key={user._id}>
-          <li className='admin__line'>
-            <button className='admin__edit-button' type='button' onClick={() => {handleEditScoreClick(user._id)}}>Edit</button>
-            <p>{ user.name }</p>
-            <p>{ user.category }</p>
-            <p>{ user.wodOneTime === 900 ? user.wodOneResult : timeConverter(user.wodOneTime) }</p>
-            <p>{ user.wodTwoResult }</p>
-            <p>{ user.wodThreeTime === 900 ? user.wodThreeResult : timeConverter(user.wodThreeTime) }</p>
-            <p>{ user.wodOneResult + user.wodTwoResult + user.wodThreeResult }</p>
-          </li>
-        </div>
-      ))}
+      <div className='admin__cards'>
+        {users.map((athlete) => (
+          <div key={athlete.id} className='admin__card-wrapper'>
+            <Card athlete={athlete} />
+            <button onClick={() => {handleEditScoreClick(athlete._id)}}>Edit</button>
+          </div>
+        ))}
+      </div>
       {isLoading && <Loader />}
     </div>
   )
