@@ -75,7 +75,6 @@ function App() {
       />
       
       <div className={styles.main}>
-        <h1 className={styles.title}>Open LEADERBOARD</h1>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/admin' element={

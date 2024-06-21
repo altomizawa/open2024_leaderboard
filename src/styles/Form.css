@@ -6,7 +6,8 @@
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
-  
+  gap: 1rem;
+
   .form__title{
     font-size: 2rem;
   }

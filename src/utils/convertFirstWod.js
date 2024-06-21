@@ -8,3 +8,9 @@ export const convertFirstWod = (user) => {
     // SET TIME TO 900 AND RETURN RESULTS
     return user.wodOneResult
 }
+
+export const convertToTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return minutes + ":" + remainingSeconds
+}

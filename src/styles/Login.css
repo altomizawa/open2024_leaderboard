@@ -83,7 +83,7 @@
 .login__close-btn{
   position: absolute;
   top: 1.5em;
-  right: 1.5em;
+  left: 1.5em;
   opacity: 0.5;
   cursor: pointer;
   color: white;
