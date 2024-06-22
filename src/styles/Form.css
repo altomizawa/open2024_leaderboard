@@ -15,6 +15,7 @@
   .form__filters{
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
   
   label{
@@ -30,12 +31,13 @@
   }
 
   button{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 700;
     padding-inline: 0.8em;
     padding-block: 0.3em;
     margin-left: 1rem;
   }
+  
 }
 
 @media (max-width: 800px) {

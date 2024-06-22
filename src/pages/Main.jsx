@@ -1,10 +1,11 @@
 import '../styles/Main.css'
-import Form from '../components/Form';
-import Card from '../components/Card';
+import Form from '../components/Form/Form';
+import Card from '../components/Card/Card';
 import requestApi from '../utils/api';
 import { useState, useEffect, Suspense } from 'react';
 import Loader from '../components/Loader/Loader';
 import Pagination from '../components/Pagination/Pagination';
+
 
 function Main() {
   const [currentLeaderboard, setCurrentLeaderboard] = useState([])

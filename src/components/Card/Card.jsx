@@ -1,6 +1,6 @@
-import '../styles/Card.css'
-import { convertToTime } from '../utils/convertFirstWod'
-import placeholder from '../assets/profile_placeholder.jpg'
+import '../../styles/Card.css'
+import { convertToTime } from '../../utils/convertFirstWod'
+import placeholder from '../../assets/profile_placeholder.jpg'
 
 function Card({ athlete, wod }) {
   return (

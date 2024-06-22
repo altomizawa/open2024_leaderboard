@@ -3,7 +3,7 @@ import requestApi from "../utils/api"
 import { useState, useEffect } from "react";
 
 import Loader from "../components/Loader/Loader";
-import Card from '../components/Card'
+import Card from '../components/Card/Card'
 
 export default function Admin() {
   const [users, setUsers] = useState([])

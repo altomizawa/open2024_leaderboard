@@ -74,11 +74,11 @@
  padding-inline: 4rem;
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   .main{
     padding-inline: 0;
   }
 
 
   
-}
+} */

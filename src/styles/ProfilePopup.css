@@ -7,7 +7,7 @@
   flex-direction: column;
   border: 1px solid white;
   border-radius: 10px;
-  background-color: darkslategrey;
+  background-color: lightgray
 }
 
 .profilePopup__picture{
@@ -24,6 +24,16 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+
+  a{
+    color: black;
+    font-weight: 500;
+  }
+
+  button{
+    color: black;
+    font-weight: bold;
+  }
 }
 
 .profilePopup__link{
@@ -38,3 +48,5 @@
   background-color: rgba(0,0,0,0);
   cursor: pointer;
 }
+
+
