@@ -49,4 +49,11 @@
   cursor: pointer;
 }
 
+.profilePopup__details{
+  p{
+    color: black;
+    font-weight: 700;
+  }
+}
+
 
