@@ -7,6 +7,8 @@ import Loader from '../components/Loader/Loader';
 import Pagination from '../components/Pagination/Pagination';
 
 
+
+
 function Main() {
   const [currentLeaderboard, setCurrentLeaderboard] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -27,7 +29,7 @@ function Main() {
     setCurrentLeaderboard(sortedRanking)
     setIsLoading(false)
   }
-  
+
   useEffect(() => {
     filterRequest({
       filter:{

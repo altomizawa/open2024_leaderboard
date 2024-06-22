@@ -10,6 +10,7 @@
 
 .header__logo{
     width: 75px;
+    cursor: pointer;
 }
 
 .header__button{
@@ -25,6 +26,11 @@
 
 .header__login{
     position: relative;
+
+    p{
+        color: white;
+        text-transform: uppercase;
+    }
 }
 
 .header__profile-img{

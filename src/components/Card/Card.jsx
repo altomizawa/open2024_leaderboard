@@ -2,9 +2,11 @@ import '../../styles/Card.css'
 import { convertToTime } from '../../utils/convertFirstWod'
 import placeholder from '../../assets/profile_placeholder.jpg'
 
+
 function Card({ athlete, wod }) {
+
   return (
-    <div key={athlete.id}>
+    <div key={athlete.id} className='test'>
         <div className='card'>
           <img src={athlete.avatar!==undefined ? athlete.avatar : placeholder} alt={athlete.name} />
           <div className='card__header'>
