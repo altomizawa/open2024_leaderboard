@@ -11,7 +11,7 @@ function Card({ athlete, wod }) {
           <img src={athlete.avatar!==undefined ? athlete.avatar : placeholder} alt={athlete.name} />
           <div className='card__header'>
             <h2>{athlete.name}</h2>
-            <h3>{athlete.category.toUpperCase()}</h3>
+            <h3 style={athlete.category === 'scaled' ? {backgroundColor: 'blue'} : {}}>{athlete.category.toUpperCase()}</h3>
           </div>
           <div className='card__scores'>
           <div className='card__wod'>
