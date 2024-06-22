@@ -71,7 +71,6 @@
 .main{
  display: flex;
  flex-direction: column;
- padding-inline: 4rem;
 }
 
 /* @media (max-width: 800px) {

@@ -16,6 +16,7 @@ function Main() {
     wod: 'finalRanking',
     type: 'individual'
   })
+  const [wod, setWod] = useState('')
   
 
   // REQUESTS FOR ALL FILTERS
@@ -39,18 +40,18 @@ function Main() {
   },[])
 
   return (
-    <>
+    <div className='main'>
       <h1 className='main__title'>OPEN LEADERBOARD</h1>
-      <Form form={form} setForm={setForm} filterRequest={filterRequest}/>
+      <Form form={form} setForm={setForm} filterRequest={filterRequest} setWod={setWod} />
       <div className='main__cards'>
         {isLoading && <Loader />}
         {currentLeaderboard.map((athlete) => (
-          <Card athlete={athlete} key={athlete.id} wod={form.wod}/>
+          <Card athlete={athlete} key={athlete.id} wod={wod}/>
         ))}
       </div>
       {/* <Pagination currentLead erboard={currentLeaderboard}/> */}
       
-    </>
+    </div>
   )
 }
 

@@ -30,15 +30,17 @@ export default function EditScorePopup(props) {
       console.error('Error updating user score', error)
     }
   }
+
+  console.log(wodNumber)
  
   return( 
     <div className='editScorePopup'>
       <form className='editScorePopup__form' onSubmit={handleSubmit}>
         <h2 className='editScorePopup__title'>{`EDITING 24.${wodNumber}`}</h2>
-        {(wodNumber === 1 | wodNumber=== 3 ) &&
+        {(wodNumber === 1 || wodNumber=== 3 ) &&
         <div>
           <div className='editScorePopup__button-wrapper'>
-            <h3>DID ATHLETE FINISH WOD?</h3>
+            <h3>DID THE ATHLETE FINISH THE WOD?</h3>
             <div className='editScorePopup__button'>
               <p
                 className={didAthleteFinish ? 'editScorePopup__selection editScorePopup__selection_false' : 'editScorePopup__selection'}
@@ -49,8 +51,8 @@ export default function EditScorePopup(props) {
               <div className={didAthleteFinish ? 'editScorePopup__selector' : 'editScorePopup__selector editScorePopup__selector_false'}></div>
             </div>
           </div>
-          <h3 className='editScorePopup__score-label'>
-            {didAthleteFinish ? 'FINAL TIME:' : 'TOTAL REPS:'}</h3>
+            <h3 className='editScorePopup__score-label'>
+              {didAthleteFinish ? 'FINAL TIME:' : 'TOTAL REPS:'}</h3>
             <TimeInput
               wodNumber = {wodNumber}
               didAthleteFinish={didAthleteFinish}

@@ -8,15 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
 }
 
 .editScorePopup__form{
   padding-block: 2.5rem;
-  width: 400px;
-  min-height: 200px;
-  background-color:  #494949;
-  border-radius: 10px;
+  width: 600px;
+  min-height: 300px;
+  background-color: white;
+
 }
 
 .editScorePopup__button-wrapper{
@@ -50,7 +50,6 @@
   display: flex;
   /* justify-content: space-between; */
   padding: 0.5rem 0;
-  border-radius: 10px;
   overflow: hidden;
   margin-top: 10px;
 }
@@ -65,7 +64,8 @@
   font-size: 1.1em;
 }
 .editScorePopup__selection_false{
-  color: rgba(255,255,255,0.2)
+  color: rgba(255,255,255,0.2);
+  color: lightgray;
 }
 
 .editScorePopup__score-label{
@@ -83,17 +83,16 @@
   border: none;
   padding-block: 0.5rem;
   text-align: center;
-  border-radius: 8px;
-  color: white;
+  color: black;
 }
 
 .editScorePopup__form-input::placeholder{
-  color: rgba(255, 255, 255, 0.2)
+  color: lightgrey;
 }
 
 .editScorePopup__form-button{
-  background-color: #D9D9D9;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .editScorePopup__form-button-wrapper{
@@ -108,4 +107,22 @@
 .editScorePopup__form-button_cancel{
   background-color: rgb(249, 62, 62);
   color: white;
+}
+
+.editScorePopup__form-button_cancel:hover{
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+
+@media (max-width: 640px) {
+  .editScorePopup__form{
+    padding-block: 2.5rem;
+    width: 100%;
+    min-height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+  }
 }

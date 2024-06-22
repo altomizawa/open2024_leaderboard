@@ -1,7 +1,7 @@
 import '../../styles/Form.css'
 
 
-function Form({ filterRequest, form, setForm }) {
+function Form({ filterRequest, form, setForm, setWod }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const options = {
@@ -13,6 +13,7 @@ function Form({ filterRequest, form, setForm }) {
       }
     }
     filterRequest(options)
+    setWod(form.wod)
   } 
 
   const handleChange = (e) => {

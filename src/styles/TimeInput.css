@@ -4,7 +4,6 @@
   border: 1px solid grey;
   width: 30%;
   margin-inline: auto;
-  border-radius: 8px;
   margin-top: 10px;
 }
 
@@ -15,12 +14,13 @@
   margin-inline: 0.2rem;
   background-color: rgba(0,0,0,0);
   border: none;
-  color:white;
+  color:gray;
   font-family: "Inria Sans", sans-serif;
   font-weight: 400;
   font-size: 1.1em;
 }
 
 .timeInput__input::placeholder{
-  color:rgba(255,255,255,0.2)
+  color:rgba(255,255,255,0.2);
+  color: lightgray;
 }

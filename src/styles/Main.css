@@ -1,3 +1,8 @@
+.main{
+  width: 90%;
+  margin-inline: auto;
+}
+
 .main__title{
   font-size: 7vw;
   text-align: left;
