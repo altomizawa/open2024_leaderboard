@@ -1,14 +1,12 @@
 .main{
   width: 90%;
   margin-inline: auto;
-}
+  padding-top: 7rem;}
 
 .main__title{
   font-size: 7vw;
   text-align: left;
   margin-bottom: 1rem;
-  width: 100%;
-  max-width: 1440px;
   margin-inline: auto;
 }
 
