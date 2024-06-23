@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 
 function Form({ filterRequest, form, setForm, setWod }) {
-  const [isFiltersOpen, setIfFiltersOpen] = useState(true)
+  const [isFiltersOpen, setIfFiltersOpen] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
