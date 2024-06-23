@@ -36,18 +36,6 @@ class Api {
     return this._makeFetchRequest(`${BASE_URL}/athletes/${userId}`, 'PATCH', scores)
   }
 
-  // changeUserScore (userId, scores) {
-  //   const options = {
-  //     method: 'PATCH', 
-  //     headers: {
-  //       //  Authorization: `Bearer ${localStorage.getItem('token')}`,
-  //        'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(scores)
-  //   }
-  //   return fetch(`${BASE_URL}/athletes/${userId}`, options)
-  // }
-
   getTeams () {
     return this._makeFetchRequest(`${BASE_URL}/athletes/getteams`, 'POST')
   }

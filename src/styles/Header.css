@@ -26,11 +26,17 @@
 
 .header__login{
     position: relative;
+}
 
-    p{
-        color: white;
-        text-transform: uppercase;
-    }
+.header__profile-wrapper{
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  p{
+    color: white;
+    text-transform: uppercase;
+  }
 }
 
 .header__profile-img{
@@ -45,4 +51,26 @@
 .header__profile-img:hover{
     border: 1px solid white;
     opacity: 50%;
+}
+
+@media (max-width: 800px) {
+  .header{
+    padding-inline: 2rem;
+  }
+
+  .header__logo{
+      width: 3rem;
+  }
+
+  .header__profile-wrapper{
+    flex-direction: column-reverse;
+    row-gap: 0.7rem;
+  
+    p{
+      display: none;
+    }
+  }
+  
+
+    
 }
