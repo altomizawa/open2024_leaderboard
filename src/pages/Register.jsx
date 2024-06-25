@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
+import ErrorBox from '../components/ErrorBox';
 
 import authApi from "../utils/auth";
 
 export default function Register(props) {
   const [input, setInput] = useState({})
   const [isFormValid, setIsFormValid] = useState(false)
+  const [errorPopup, setErrorPopup] = useState(false)
 
   const { handleClosePopup } = props;
 
@@ -96,19 +98,25 @@ export default function Register(props) {
     } else {setIsFormValid(false)}
   }, [input])
 
+
   // SUBMIT FORM
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorPopup(false);
+    console.log('form connected')
     try{
       const newUser = await authApi.createUser(input)
       if (!newUser) {
-        return console.log('user not created')
+        throw new Error({message: 'User already in Database'})
       }
       navigate('/admin');
       handleClosePopup();
       return;
-    } catch(err){console.error('user already in database', err.message)}
+    } catch(err){
+      setErrorPopup(true)
+      console.error('Could not create user', err.message)}
   }
+
 
   // HANDLE LOGIN LINK IF USER ALREADY HAS AN ACCOUNT
   const handleLoginNowLink = () => {
@@ -121,13 +129,14 @@ export default function Register(props) {
         <button className='login__close-btn' onClick={handleClosePopup}>CLOSE</button>
         <h2 className='login__title'>SIGN UP</h2>
         {inputs.map((input) => (
-          <>
+          <React.Fragment key={input.name}>
             <input key={input.name} name={input.name} type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} autoComplete='true' />
             <span style={{color: 'darkslategrey', fontWeight: 200}}>{input.errorMessage}</span>
-          </>
+          </React.Fragment>
         ))}
         <p className='login__paragraph'>Already a member? <a className='login__link' onClick={handleLoginNowLink}>Login now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
+        {errorPopup && <ErrorBox type='signup' />}
       </form>
     </div>
   )

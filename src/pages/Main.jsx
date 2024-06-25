@@ -5,6 +5,7 @@ import requestApi from '../utils/api';
 import { useState, useEffect, Suspense } from 'react';
 import Loader from '../components/Loader/Loader';
 import Pagination from '../components/Pagination/Pagination';
+import LeaderboardTeams from '../components/LeaderboardTeams/LeaderboardTeams';
 
 
 
@@ -48,11 +49,11 @@ function Main() {
       <div className='main__cards'>
         {isLoading && <Loader />}
         {currentLeaderboard.map((athlete) => (
-          <Card athlete={athlete} key={athlete.id} wod={wod}/>
+          <Card athlete={athlete} key={athlete._id} wod={wod}/>
         ))}
       </div>
       {/* <Pagination currentLead erboard={currentLeaderboard}/> */}
-      
+      {/* <LeaderboardTeams /> */}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 
 import authApi from "../utils/auth";
@@ -127,10 +127,10 @@ export default function Login(props) {
         <h2 className='login__title'>SIGN IN</h2>
       {isErrorBoxActive && <ErrorBox type='login'/>}
         {inputs.map((input) => (
-          <>
+          <React.Fragment key={input.name}>
             <input name={input.name} value={input.value}type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} />
             <span style={{color: 'darkslategrey', fontWeight: 200}}>{input.errorMessage}</span>
-          </>
+          </React.Fragment>
         ))}
         <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
