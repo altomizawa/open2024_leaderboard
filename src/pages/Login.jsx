@@ -92,6 +92,7 @@ export default function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     try{
       // CLEAR INPUTS
       clearInputs()
@@ -125,7 +126,6 @@ export default function Login(props) {
       <form className='login__form' onSubmit={handleSubmit}>
         <button type='button' className='login__close-btn' onClick={closePopup}>CLOSE</button>
         <h2 className='login__title'>SIGN IN</h2>
-      {isErrorBoxActive && <ErrorBox type='login'/>}
         {inputs.map((input) => (
           <React.Fragment key={input.name}>
             <input name={input.name} value={input.value}type={input.type} placeholder={input.placeholder} required={input.required} className={input.className} onChange={handleInput} />
@@ -134,6 +134,7 @@ export default function Login(props) {
         ))}
         <p className='login__paragraph'>Not a member? <a onClick={() => navigate('/register')} className='login__link'>Sign up now</a></p>
         <button type='submit' className={isFormValid ? 'login__button' : 'login__button login__button_inactive'}>ENTER</button>
+        {isErrorBoxActive && <ErrorBox type='login'/>}
       </form>
     </div>
   )
